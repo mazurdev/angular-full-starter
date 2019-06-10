@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Title",
+    "description": "Description...",
+    "keywords": "Keywords",
+    "url": "https://example.com",
+    "image": "https://example.com/assets/config/og-image.png",
+    "viewport": "width=device-width, initial-scale=1",
+    "subject": "Title",
+    "copyright": "Title",
+    "language": "EN",
+    "robots": "INDEX, FOLLOW",
+    "author": "Title"
+  }
+}

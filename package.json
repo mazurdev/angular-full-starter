@@ -3,15 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port=4202",
+    "start": "ng serve --port=4204",
     "serve:ssr": "node dist/server",
     "serve:prerender": "cd dist/browser && http-server",
-
     "build": "ng build && npm run build-ie-polyfills",
     "build:prod": "ng build --prod && npm run build-ie-polyfills",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:prerender": "npm run build:client-and-server-bundles && npm run compile:server && npm run generate:prerender",
-
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "build:client-and-server-bundles": "npm run build:prod && ng run angular-full-starter:server:production",
     "generate:prerender": "cd dist && node prerender",
@@ -38,15 +36,22 @@
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/platform-server": "~8.0.0",
+    "@angular/pwa": "^0.800.2",
     "@angular/router": "~8.0.0",
+    "@angular/service-worker": "~8.0.0",
+    "@ng-toolkit/pwa": "^7.1.2",
     "@ng-toolkit/universal": "^7.1.2",
-    "@nguniversal/common": "0.0.0",
-    "@nguniversal/express-engine": "0.0.0",
-    "@nguniversal/module-map-ngfactory-loader": "0.0.0",
+    "@nguniversal/common": "^7.1.1",
+    "@nguniversal/express-engine": "^7.1.1",
+    "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
+    "@ngx-lite/json-ld": "^0.6.2",
+    "classlist.js": "^1.1.20150312",
     "domino": "^2.1.3",
     "express": "^4.15.2",
+    "ngx-cookie-service": "^2.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
+    "web-animations-js": "^2.3.1",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -56,10 +61,12 @@
     "@angular/language-service": "~8.0.0",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "http-server": "^0.11.1",
     "ts-loader": "^5.2.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3",
+    "uglifyjs-webpack-plugin": "^2.1.3",
     "webpack-cli": "^3.1.0"
   }
 }

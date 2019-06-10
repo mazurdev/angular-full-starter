@@ -1,0 +1,18 @@
+<div class="page-not-found">
+  <div class="bg-page-not-found">
+
+    <div class="not-found-text">
+
+      <h1><strong>404</strong> - Page not found</h1>
+
+      <div class="not-found-back-btn">
+        <p *ngIf="path">Go to the
+          <a [routerLink]="path" aria-label="Go to previous page">{{ path }}</a>
+          page
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

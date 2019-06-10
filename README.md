@@ -20,11 +20,11 @@
   * [Features](#features)
 
 ## Getting started
-  ```bash
-  git clone https://github.com/mazurdev/angular-full-starter.git
-  cd to "angular-full-starter" folder
-  npm run start | yarn start
-  ```
+```bash
+git clone https://github.com/mazurdev/angular-full-starter.git
+cd to "angular-full-starter" folder
+npm run start | yarn start
+```
 
 ## Stack
 
@@ -49,6 +49,8 @@
 
 ```bash
 npm i @ng-toolkit/universal
+npm i @ng-toolkit/pwa
 ng add ng-toolkit/universal
-
+ng add @angular/pwa
+ng add @ng-toolkit/pwa
 ```

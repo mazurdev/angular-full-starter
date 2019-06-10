@@ -1,3 +1,20 @@
+import {readFileSync} from 'fs';
+
+const domino = require('domino');
+const template = readFileSync(join('dist', 'browser', 'index.html'), 'utf8');
+const win = domino.createWindow(template);
+global['window'] = win;
+Object.defineProperty(win.document.body.style, 'transform', {
+  value: () => {
+    return {
+      enumerable: true,
+      configurable: true
+    };
+  },
+});
+global['document'] = win.document;
+global['CSS'] = null;
+
 import 'zone.js/dist/zone-node';
 import {enableProdMode} from '@angular/core';
 // Express Engine
@@ -40,6 +57,10 @@ app.get('*.*', express.static(DIST_FOLDER, {
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-  res.render('index', { req });
+  res.render('index', {req});
 });
 
+// Start up the Node server
+app.listen(PORT, () => {
+  console.log(`Node Express server listening on http://localhost:${PORT}`);
+});

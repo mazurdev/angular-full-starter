@@ -1,0 +1,43 @@
+@import "../../assets/styles/mixins";
+
+.page-not-found {
+  .bg-page-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+    background-size: cover;
+    .not-found-text {
+      h1 {
+        @include h1;
+        color: $light;
+        text-align: center;
+      }
+      .not-found-back-btn {
+        margin-top: 40px;
+        p {
+          color: $light;
+          text-align: center;
+          a {
+            border-radius: 2px;
+            padding: 15px 40px;
+            margin: 0 2%;
+            color: $light;
+            text-decoration: none;
+            background: $white;
+            &:hover {
+              transition: .3s cubic-bezier(.55,.085,.68,.53);
+              background: $primary;
+            }
+          }
+        }
+
+      }
+    }
+
+
+  }
+}
