@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/mazurdev/web-development-articles">
-    <img src="https://raw.githubusercontent.com/mazurdev/angular-full-starter/master/meta-assets/angular-logo.png" alt="Angular Logo" width="256" height="256">
+    <img src="https://raw.githubusercontent.com/mazurdev/angular-full-starter/master/meta-assets/angular-logo.png" alt="Angular Logo" width="96" height="96">
   </a>
   <h1 align="center">ANGULAR FULL STARTER</h1>
   <p align="center">Angular starter, which combines all the necessary components for writing a complete project</p>
@@ -12,23 +12,43 @@
   <br>
 </p>
 
-## :wrench: STACK
+## Table of Content
 
-* Angular Universal
-* PWA
-* Server-side rendering
+  * [Getting Started](#getting-started)
+  * [Stack](#stack)
+  * [Useful Commands](#useful-commands)
+  * [Features](#features)
 
-## :heavy_check_mark: Getting started
+## Getting started
+  ```bash
+  git clone https://github.com/mazurdev/angular-full-starter.git
+  cd to "angular-full-starter" folder
+  npm run start | yarn start
+  ```
+
+## Stack
+
+  * PWA (progressive web application)
+  * Angular Universal (SSR + Prerender)
+  * Maximum SEO
+  * Maximum Performance
+  * Maximum Responsive
+
+## Useful Commands
+  * `npm run start` - starts a dev server and opens browser with running app
+
+## Features
+
+  * disable `tests`
+  * `lazy-loading`
+  * custom preloadStrategy
+  * maximum responsive mixins
+  * custom components in `SharedModule`
+
+## Start Universal + PWA
+
 ```bash
-git clone https://github.com/mazurdev/angular-full-starter.git
-cd to folder
-npm run start | yarn start
-```
+npm i @ng-toolkit/universal
+ng add ng-toolkit/universal
 
-## Build
-```bash
-npm run build | yarn build
-cd dist
-http-server
-open http://localhost:8080
 ```

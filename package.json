@@ -1,14 +1,33 @@
 {
   "name": "angular-full-starter",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "ng serve --port=4202",
+    "serve:ssr": "node dist/server",
+    "serve:prerender": "cd dist/browser && http-server",
+
+    "build": "ng build && npm run build-ie-polyfills",
+    "build:prod": "ng build --prod && npm run build-ie-polyfills",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "build:prerender": "npm run build:client-and-server-bundles && npm run compile:server && npm run generate:prerender",
+
+    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
+    "build:client-and-server-bundles": "npm run build:prod && ng run angular-full-starter:server:production",
+    "generate:prerender": "cd dist && node prerender",
+    "cp": "cp -p src/generated/ie-polyfills.min.js dist/browser/generated && cp src/assets/config/.htaccess dist/browser && cp src/assets/config/robots.txt dist/browser && cp src/assets/config/sitemap.xml dist/browser && cp src/assets/config/googlee83acb1d534a0680.html dist/browser",
+    "analyze": "webpack-bundle-analyzer dist/stats.json",
+    "build:stats": "ng build --stats-json",
+    "check:http": "cd dist/browser && http-server -o",
+    "build-ie-polyfills": "webpack-cli src/ie-polyfills.js -o src/generated/ie-polyfills.min.js --optimize-minimize -c webpack-polyfill.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mazurdev/angular-full-starter"
+  },
+  "contributors": [
+    "Vladislav Mazur <vlad.developm@gmail.com>"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.0.0",
@@ -18,7 +37,14 @@
     "@angular/forms": "~8.0.0",
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
+    "@angular/platform-server": "~8.0.0",
     "@angular/router": "~8.0.0",
+    "@ng-toolkit/universal": "^7.1.2",
+    "@nguniversal/common": "0.0.0",
+    "@nguniversal/express-engine": "0.0.0",
+    "@nguniversal/module-map-ngfactory-loader": "0.0.0",
+    "domino": "^2.1.3",
+    "express": "^4.15.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -29,19 +55,11 @@
     "@angular/compiler-cli": "~8.0.0",
     "@angular/language-service": "~8.0.0",
     "@types/node": "~8.9.4",
-    "@types/jasmine": "~3.3.8",
-    "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^5.0.0",
-    "jasmine-core": "~3.4.0",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.1.0",
-    "karma-chrome-launcher": "~2.2.0",
-    "karma-coverage-istanbul-reporter": "~2.0.1",
-    "karma-jasmine": "~2.0.1",
-    "karma-jasmine-html-reporter": "^1.4.0",
-    "protractor": "~5.4.0",
+    "ts-loader": "^5.2.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "webpack-cli": "^3.1.0"
   }
 }
