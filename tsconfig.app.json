@@ -5,7 +5,8 @@
     "baseUrl": "./",
     "module": "esnext",
     "types": [
-      "node"
+      "node",
+      "jquery"
     ]
   }
 }

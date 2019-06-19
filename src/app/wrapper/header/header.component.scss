@@ -1,0 +1,137 @@
+@import "../../../assets/styles/utils/mixins";
+
+:host {
+
+  /*-------------------------------------------------BURGER ANIM*/
+  label {
+    z-index: 999;
+    margin-right: -20px !important; // fix width + padding
+    div svg path {
+      stroke: $black;
+    }
+  }
+  svg {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+  }
+  path {
+    fill: none;
+    -webkit-transition: stroke-dashoffset .6s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray .6s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+    -o-transition: stroke-dashoffset .6s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray .6s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+    transition: stroke-dashoffset .6s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray .6s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+    stroke-width: 15px;
+    stroke-linecap: round;
+    stroke-dashoffset: 0;
+  }
+  path.topDivider, path.bottomDivider {
+    stroke-dasharray: 240px 950px;
+  }
+  path.middleDivider {
+    stroke-dasharray: 240px 240px;
+  }
+  .cross path.topDivider, .cross path.bottomDivider {
+    stroke-dashoffset: -650px
+  }
+  .cross path.middleDivider {
+    stroke-dashoffset: -115px;
+    stroke-dasharray: 1px 220px;
+  }
+  label:hover {
+    cursor: pointer
+  }
+  .cross svg path {
+    stroke: $white !important;
+  }
+  /*-------------------------------------------------END BURGER ANIM*/
+
+  /*-----------------------------------------sidenav*/
+
+  .sidenav {
+    z-index: 10;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: $primary;
+    overflow-x: hidden;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    ul {
+      width: 90%;
+      margin: 20px 0;
+      li {
+        width: 100%;
+        margin-bottom: 20px;
+        ul {
+          li {
+            padding: 20px 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  .sidenav-wrapper {
+    .logo-wrapper-sidenav img:hover {
+      cursor: pointer;
+    }
+  }
+  /*-------------------------------------------------END Sidenav*/
+
+  /*-----------------------------------------dropdown*/
+}
+
+header {
+  padding: 13px 0;
+  background-color: $white;
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .logo-wrapper {
+      img {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .links-wrapper {
+      display: flex;
+      align-items: baseline;
+      ul {
+        display: flex;
+        li {
+          position: relative;
+          padding-right: 30px;
+          text-align: center;
+          a {
+            color: $primary;
+            &.active:hover {
+              cursor: auto;
+              color: $primary;
+            }
+            &:hover {
+              transition: .4s ease-in-out !important;
+              color: $primary;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+}

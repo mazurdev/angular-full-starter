@@ -1,0 +1,37 @@
+@import "../../styles/utils/variables";
+
+header {
+
+  //------------------------------------------- sidenav
+  @media screen and (min-width: $tablet) {
+    .sidenav-wrapper {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    .sidenav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .burger {
+        display: flex;
+        align-items: center;
+        font-size: 1.5em;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    nav {
+      .logo-wrapper {
+        display: none !important;
+      }
+      .links-wrapper {
+        display: none !important;
+      }
+    }
+  }
+
+}

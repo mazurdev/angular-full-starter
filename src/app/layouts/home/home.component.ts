@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+// dialog
+import {MatDialog} from '@angular/material/dialog';
+import {DialogExampleComponent} from '../../shared/dialog/dialog-example/dialog-example.component';
 
 @Component({
   selector: 'nv-home',
@@ -7,7 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) {
+  }
+
+  openDialog() {
+    this.dialog.open(DialogExampleComponent, {
+      data: {
+        animal: 'panda'
+      }
+    });
+  }
 
   ngOnInit() {
   }

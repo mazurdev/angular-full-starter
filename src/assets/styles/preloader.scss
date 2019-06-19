@@ -1,0 +1,68 @@
+@import "utils/variables";
+@import "utils/keyframes";
+
+body, html {
+  height: 100%;
+  overflow: hidden; // change with loadPage and add class "show-scroll"
+}
+.show-scroll {
+  overflow: initial;
+}
+
+// custom scrollbar
+.show-scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: $box-shadow;
+  background-color: $light;
+  border-radius: $radius-scroll;
+}
+
+.show-scroll::-webkit-scrollbar {
+  width: 6px;
+  background-color: $light;
+}
+
+.show-scroll::-webkit-scrollbar-thumb {
+  background-color: darken($border, 20%);
+  border-radius: $radius-scroll;
+}
+.show-scroll::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: darken($border, 60%);
+}
+
+.app-loading {
+  overflow: hidden;
+  z-index: 9999;
+  background-color: $primary;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  .logo {
+    width: 72px;
+    height: 72px;
+    background: url("./assets/icons/icon-72x72.png") center center no-repeat;
+    background-size: cover
+  }
+  .spinner {
+    height: 148px;
+    width: 148px;
+    animation: rotateLoader 2s linear infinite;
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto
+  }
+  .spinner .path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dashLoader 1.5s ease-in-out infinite;
+    stroke-linecap: round;
+    stroke: $border;
+  }
+}

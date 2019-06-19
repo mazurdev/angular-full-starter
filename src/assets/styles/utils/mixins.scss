@@ -1,12 +1,5 @@
 @import "variables";
 
-@mixin disableAnim {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
 //---------------------------------------heading
 @mixin h1 {
   font-family: 'Alice', sans-serif;
@@ -28,4 +21,12 @@
   }
 
 
+}
+//---------------------------------------others
+@mixin disableAnim {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }

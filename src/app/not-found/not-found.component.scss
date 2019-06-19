@@ -1,4 +1,4 @@
-@import "../../assets/styles/mixins";
+@import "../../assets/styles/utils/mixins";
 
 .page-not-found {
   .bg-page-not-found {
@@ -8,7 +8,7 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+    background: $gradient-black;
     background-size: cover;
     .not-found-text {
       h1 {
@@ -29,7 +29,7 @@
             text-decoration: none;
             background: $white;
             &:hover {
-              transition: .3s cubic-bezier(.55,.085,.68,.53);
+              transition: $transition;
               background: $primary;
             }
           }

@@ -1,0 +1,73 @@
+@import "../../../assets/styles/utils/variables";
+
+footer {
+  background-color: $primary;
+  //height: 400px;
+  padding: 70px 0 0;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    img:hover {
+      cursor: pointer;
+    }
+    .social-footer {
+      display: flex;
+      align-items: center;
+      .icons {
+        margin-top: 5px;
+        a {
+          margin-right: 34.5px;
+        }
+        a:nth-child(2) {
+          i:before {
+            font-size: 27px;
+          }
+        }
+        i:before {
+          color: $white;
+          font-size: 24px;
+        }
+        a:hover {
+          cursor: pointer;
+        }
+        a:hover i:before {
+          transition: .5s ease-in-out;
+          color: $black;
+        }
+      }
+    }
+  }
+
+  //----------------------------------------------separator
+  hr.separator {
+    background: $border;
+    height: 1px;
+    width: 100%;
+  }
+
+
+  .copyright {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+    p {
+      color: $white;
+      margin-bottom: 0;
+    }
+    p:last-child {
+      letter-spacing: 1px;
+    }
+    a {
+      transition: 0s !important;
+      color: white;
+      height: 100%;
+    }
+    a:hover {
+      cursor: pointer;
+      border-bottom: 1px solid white;
+    }
+  }
+
+}

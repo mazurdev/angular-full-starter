@@ -14,8 +14,7 @@
         ],
         "urls": [
           "https://fonts.googleapis.com/**",
-          "https://fonts.gstatic.com/s/**",
-          "https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          "https://fonts.gstatic.com/s/**"
         ]
       }
     }, {
