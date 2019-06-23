@@ -25,7 +25,8 @@
 2 - Go to "angular-full-starter" folder
 3 - Change the name of the project "angular-full-starter" to your in files: "angular.json", "package.json", "manifest.json" and "README.md"
 4 - Change application prefix on this guide - "https://medium.com/@kashifazmi94/change-prefix-of-component-in-angular-application-34c8d8a86dbf"
-4 - npm run start | yarn start
+5 - Change "baseUrl" variable in "environment.ts" and "environment.prod.ts"
+6 - npm run start | yarn start
 ```
 
 ## Stack
@@ -63,6 +64,7 @@
   * maximum responsive mixins
   * custom components in `SharedModule`
   * `jQuery` to simplify javascript usage
+  * present `base application URL`: "environment.ts" and "environment.prod.ts"
   * present modalComponent
   * present PWA for iOS
   * present `errorHandler`
