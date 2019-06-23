@@ -1,4 +1,19 @@
+@import "../../../assets/styles/utils/mixins";
 
 .page-home {
+  //---------------------------------------------main
+  h1 {
+    @include h1;
+  }
+  p {
+    @include p;
+  }
+  button.btn-secondary {
+    margin: 20px 0;
+  }
+  //---------------------------------------------section 1
+  .section-1 {
+    height: 100vh;
+  }
 
 }

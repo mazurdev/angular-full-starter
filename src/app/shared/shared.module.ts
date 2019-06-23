@@ -35,7 +35,6 @@ import {MatDialogModule, MatSnackBarModule} from '@angular/material';
     // material
     MatDialogModule,
     MatSnackBarModule
-  ],
-  declarations: []
+  ]
 })
 export class SharedModule {}

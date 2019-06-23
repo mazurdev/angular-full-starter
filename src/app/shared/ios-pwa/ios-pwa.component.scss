@@ -1,0 +1,35 @@
+.content {
+  margin: 0.5em;
+  text-align: center;
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    img {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.full-width {
+  margin-top: 1em;
+  width: 100%;
+  text-align: center;
+  i {
+    color: white;
+  }
+}
+.btn-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: transparent;
+  i {
+    color: white;
+  }
+}

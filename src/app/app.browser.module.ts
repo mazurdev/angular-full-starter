@@ -6,6 +6,8 @@ import {AppComponent} from './app.component';
 import {AppModule} from './app.module';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
+// IOS PWA
+import {IosPWAComponent} from './shared/ios-pwa/ios-pwa.component';
 
 @NgModule({
   imports: [
@@ -13,6 +15,13 @@ import {environment} from '../environments/environment';
     AppModule,
     BrowserTransferStateModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
+  ],
+  declarations: [
+    // IOS PWA
+    IosPWAComponent
+  ],
+  entryComponents: [
+    IosPWAComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

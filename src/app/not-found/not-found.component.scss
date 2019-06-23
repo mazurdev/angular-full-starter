@@ -8,7 +8,7 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background: $gradient-black;
+    background: url("/assets/img/intro.jpg") center center no-repeat;
     background-size: cover;
     .not-found-text {
       h1 {
@@ -21,18 +21,6 @@
         p {
           color: $light;
           text-align: center;
-          a {
-            border-radius: 2px;
-            padding: 15px 40px;
-            margin: 0 2%;
-            color: $light;
-            text-decoration: none;
-            background: $white;
-            &:hover {
-              transition: $transition;
-              background: $primary;
-            }
-          }
         }
 
       }

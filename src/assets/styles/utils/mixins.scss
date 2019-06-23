@@ -19,8 +19,14 @@
   @media screen and (max-width: 360px) {
     font-size: 2.1em;
   }
-
-
+}
+@mixin p {
+  font-family: 'Alice', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
 }
 //---------------------------------------others
 @mixin disableAnim {
@@ -29,4 +35,30 @@
   -ms-transition: none !important;
   -o-transition: none !important;
   transition: none !important;
+}
+
+.btn-primary {
+  border-radius: $radius-btn;
+  padding: 15px 40px;
+  margin: 0 2%;
+  color: $black;
+  text-decoration: none;
+  background: $white;
+  &:hover {
+    transition: $transition;
+    color: $white;
+    background: $primary;
+  }
+}
+.btn-secondary {
+  border-radius: $radius-btn;
+  padding: 15px 40px;
+  margin: 0 2%;
+  color: $white;
+  text-decoration: none;
+  background: $primary;
+  &:hover {
+    transition: $transition;
+    background: darken($primary, 15%);
+  }
 }
