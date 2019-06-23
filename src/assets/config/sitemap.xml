@@ -8,7 +8,7 @@
   http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 >
   <url>
-    <loc>https://darma.capital</loc>
+    <loc>https://example.com</loc>
     <lastmod>2019-06-07T18:33:09+00:00</lastmod>
     <image:image>
       <image:loc>https://example.com/assets/img/example.png</image:loc>

@@ -21,9 +21,11 @@
 
 ## Getting started
 ```bash
-git clone https://github.com/mazurdev/angular-full-starter.git
-cd to "angular-full-starter" folder
-npm run start | yarn start
+1 - git clone https://github.com/mazurdev/angular-full-starter.git
+2 - Go to "angular-full-starter" folder
+3 - Change the name of the project "angular-full-starter" to your in files: "angular.json", "package.json", "manifest.json" and "README.md"
+4 - Change application prefix on this guide - "https://medium.com/@kashifazmi94/change-prefix-of-component-in-angular-application-34c8d8a86dbf"
+4 - npm run start | yarn start
 ```
 
 ## Stack
@@ -35,7 +37,23 @@ npm run start | yarn start
   * Maximum Responsive
 
 ## Useful Commands
+
+#### Development
   * `npm run start` - starts a dev server and opens browser with running app
+  * `npm run server:ssr` - dev server (SSR) 
+  * `npm run serve:prerender` - dev server (PRERENDER)
+ 
+#### Build
+  * `npm run build` - development build
+  * `npm run build:prod` - production build 
+  * `npm run build:ssr` - production build (SSR) 
+  * `npm run build:prerender` - production build (PRERENDER)
+
+#### Others
+  * `npm run cp` - copy assets files to production folder
+  * `npm run build:stats` - generate webpack-bundle application
+  * `npm run analyze` - analyze webpack-bundle application
+  * `npm run check:https` - open the application by https
 
 ## Features
 
@@ -44,8 +62,14 @@ npm run start | yarn start
   * custom preloadStrategy
   * maximum responsive mixins
   * custom components in `SharedModule`
+  * `jQuery` to simplify javascript usage
+  * present modalComponent
+  * present PWA for iOS
+  * present `errorHandler`
+  * present `seoService`
+  * present `404` not-found page
 
-## Start Universal + PWA
+## Start Universal + PWA (Addition)
 
 ```bash
 npm i @ng-toolkit/universal
