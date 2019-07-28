@@ -16,7 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'lazy',
-    loadChildren: './components/lazy/lazy.module#LazyModule'
+    loadChildren: () => import('./components/lazy/lazy.module').then(m => m.LazyModule),
+    data: {animation: 'Lazy'}
   },
   // 404
   {path: '**', resolve: {path: PathResolveService}, component: NotFoundComponent}
