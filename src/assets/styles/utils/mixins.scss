@@ -1,31 +1,65 @@
 @import "variables";
+@import "~rfs/scss";
+
+//---------------------------------------custom scrollbar
+@mixin customScrollbar($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+
+  // For Google Chrome
+  ::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+    background-color: $background-color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    -webkit-border-radius: $radius-scroll;
+    -moz-border-radius: $radius-scroll;
+    border-radius: $radius-scroll;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+    -webkit-box-shadow: $box-shadow-inset;
+    -moz-box-shadow: $box-shadow-inset;
+    box-shadow: $box-shadow-inset;
+    -webkit-border-radius: $radius-scroll;
+    -moz-border-radius: $radius-scroll;
+    border-radius: $radius-scroll;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
 
 //---------------------------------------heading
 @mixin h1 {
+  @include rfs(64);
   font-family: 'Alice', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 64px;
-  line-height: 73px;
+  line-height: normal;
   text-align: center;
-  @media screen and (max-width: 720px) {
-    font-size: 3em;
-    line-height: 1.2em;
-  }
-  @media screen and (max-width: 450px) {
-    font-size: 2.5em;
-    line-height: 1.4em;
-  }
-  @media screen and (max-width: 360px) {
-    font-size: 2.1em;
-  }
 }
 @mixin p {
+  @include rfs(24);
   font-family: 'Alice', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
-  line-height: 32px;
+  line-height: normal;
+  text-align: center;
+}
+@mixin subtext {
+  @include rfs(16);
+  font-family: 'Kanit', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
   text-align: center;
 }
 //---------------------------------------others
@@ -36,29 +70,21 @@
   -o-transition: none !important;
   transition: none !important;
 }
+@mixin centered($horizontal: true, $vertical: true) {
+  position: absolute;
 
-.btn-primary {
-  border-radius: $radius-btn;
-  padding: 15px 40px;
-  margin: 0 2%;
-  color: $black;
-  text-decoration: none;
-  background: $white;
-  &:hover {
-    transition: $transition;
-    color: $white;
-    background: $primary;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
   }
 }
-.btn-secondary {
-  border-radius: $radius-btn;
-  padding: 15px 40px;
-  margin: 0 2%;
-  color: $white;
-  text-decoration: none;
-  background: $primary;
-  &:hover {
-    transition: $transition;
-    background: darken($primary, 15%);
-  }
-}
+

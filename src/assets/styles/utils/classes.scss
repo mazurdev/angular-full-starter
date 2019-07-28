@@ -3,19 +3,9 @@
 /*-------------------------------------------------max-width*/
 .max-width {
   margin: 0 auto;
-  max-width: 1680px;
+  max-width: $desktop;
 }
-/*-------------------------------------------------text*/
-.subtext {
-  font-family: 'Kanit', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  text-transform: uppercase;
-  color: $primary;
-  text-align: center;
-}
+
 /*-------------------------------------------------other*/
 .coming-soon {
   user-select: none;
@@ -26,21 +16,41 @@
 /*-------------------------------------------------flexbox*/
 .flex-left {
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
 }
 .flex-center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .flex-right {
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
+}
+/*-------------------------------------------------buttons*/
+.btn-primary {
+  border-radius: $radius-btn;
+  padding: 15px 40px;
+  margin: 0 2%;
+  color: $black;
+  text-decoration: none;
+  background: $white;
+  &:hover {
+    transition: $transition;
+    color: $white;
+    background: $primary;
+  }
+}
+.btn-secondary {
+  border-radius: $radius-btn;
+  padding: 15px 40px;
+  margin: 0 2%;
+  color: $white;
+  text-decoration: none;
+  background: $primary;
+  &:hover {
+    transition: $transition;
+    background: darken($primary, 15%);
+  }
 }
 /*-------------------------------------------------responsive*/
 .m0-mobile {

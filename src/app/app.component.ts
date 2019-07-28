@@ -24,16 +24,6 @@ export class AppComponent implements OnInit {
   cookieValue;
   deviceInfo = null;
 
-  schema = {
-    '@context': 'http://schema.org',
-    '@type': 'WebSite',
-    'author': 'Title',
-    'contentLocation': '200 S. WACKER DR, SUITE 2400 CHICAGO, IL 60606',
-    'description': 'Description',
-    'name': 'Title',
-    'url': 'https://example.com'
-  };
-
   constructor(
     private cookieService: CookieService,
     private localStorage: LocalStorageService,

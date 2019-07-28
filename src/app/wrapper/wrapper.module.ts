@@ -7,7 +7,7 @@ import {RouterModule} from '@angular/router';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 // utils
-import {DirectivesModule} from '../directives/directives.module';
+import {DirectivesModule} from '../shared/directives/directives.module';
 
 @NgModule({
   imports: [

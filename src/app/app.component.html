@@ -7,5 +7,16 @@
 </div>
 <div [@routeAnimations]="o && o.activatedRouteData && o.activatedRouteData['animation']">
   <router-outlet #o="outlet"></router-outlet>
-  <ngx-json-ld [json]="schema"></ngx-json-ld>
 </div>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "author": "Author",
+    "contentLocation": "Chapel Hill, NC",
+    "description": "Description",
+    "name": "Title",
+    "url": "https://example.com"
+  }
+</script>

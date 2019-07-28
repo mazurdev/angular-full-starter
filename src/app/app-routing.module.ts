@@ -4,7 +4,7 @@ import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 // app
 import {NotFoundComponent} from './not-found/not-found.component';
 // 404
-import {HomeComponent} from './layouts/home/home.component';
+import {HomeComponent} from './components/home/home.component';
 import {PathResolveService} from './shared/services/path-resolve.service';
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'lazy',
-    loadChildren: './layouts/lazy/lazy.module#LazyModule'
+    loadChildren: './components/lazy/lazy.module#LazyModule'
   },
   // 404
   {path: '**', resolve: {path: PathResolveService}, component: NotFoundComponent}
