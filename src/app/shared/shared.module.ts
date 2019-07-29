@@ -5,8 +5,11 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // detect devices
 import {DeviceDetectorModule} from 'ngx-device-detector';
+// SEO
+import {NgxJsonLdModule} from '@ngx-lite/json-ld';
 // material
 import {MatDialogModule, MatSnackBarModule} from '@angular/material';
+
 
 @NgModule({
   imports: [
@@ -16,6 +19,8 @@ import {MatDialogModule, MatSnackBarModule} from '@angular/material';
     ReactiveFormsModule,
     // detect devices
     DeviceDetectorModule.forRoot(),
+    // SEO
+    NgxJsonLdModule,
     // material
     MatDialogModule,
     MatSnackBarModule
@@ -26,6 +31,8 @@ import {MatDialogModule, MatSnackBarModule} from '@angular/material';
     ReactiveFormsModule,
     // detect devices
     DeviceDetectorModule,
+    // SEO
+    NgxJsonLdModule,
     // material
     MatDialogModule,
     MatSnackBarModule

@@ -45,6 +45,7 @@
     "@nguniversal/common": "^7.1.1",
     "@nguniversal/express-engine": "^7.1.1",
     "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
+    "@ngx-lite/json-ld": "^0.6.2",
     "classlist.js": "^1.1.20150312",
     "domino": "^2.1.3",
     "express": "^4.15.2",

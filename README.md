@@ -24,10 +24,12 @@
 1 - git clone https://github.com/mazurdev/angular-full-starter.git
 2 - Go to "angular-full-starter" folder
 3 - Change the name of the project "angular-full-starter" to your in files: "angular.json", "package.json", "manifest.json" and "README.md"
-4 - Change application prefix on this guide - "https://medium.com/@kashifazmi94/change-prefix-of-component-in-angular-application-34c8d8a86dbf"
-5 - Change "baseUrl" variable in "environment.ts" and "environment.prod.ts"
-6 - npm run start | yarn start
+4 - Change "baseUrl" variable in "environment.ts" and "environment.prod.ts"
+5 - npm run start || yarn start
 ```
+> If need - [Update packages](#update-packages)
+
+> If need Change application prefix on [this guide](https://medium.com/@kashifazmi94/change-prefix-of-component-in-angular-application-34c8d8a86dbf)
 
 ## Stack
 
@@ -71,7 +73,7 @@
   * present `seoService`
   * present `404` not-found page
 
-## Start Universal + PWA (Addition)
+## Add Universal + PWA (Addition)
 
 ```bash
 npm i @ng-toolkit/universal
@@ -80,3 +82,14 @@ ng add ng-toolkit/universal
 ng add @angular/pwa
 ng add @ng-toolkit/pwa
 ```
+
+## Update packages
+
+```bash
+ng update -g @angular/cli
+ng update @angular/cli @angular/core
+ng update @angular/material
+ng update @nguniversal/common @nguniversal/express-engine @nguniversal/module-map-ngfactory-loader
+ng update @ng-toolkit/universal @ng-toolkit/pwa
+```
+> If need - fix this (https://github.com/maciejtreder/ng-toolkit/issues/639)

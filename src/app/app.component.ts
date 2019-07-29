@@ -23,6 +23,15 @@ export class AppComponent implements OnInit {
   isBrowser;
   cookieValue;
   deviceInfo = null;
+  schema = {
+    '@context': 'http://schema.org',
+    '@type': 'WebSite',
+    'author': 'Author',
+    'contentLocation': 'Chapel Hill, NC',
+    'description': 'Description',
+    'name': 'Title',
+    'url': 'https://example.com'
+  };
 
   constructor(
     private cookieService: CookieService,
@@ -47,7 +56,7 @@ export class AppComponent implements OnInit {
     if (this.isBrowser && this.deviceInfo.browser === 'Safari') {
       const isIos = () => {
         const userAgent = window.navigator.userAgent.toLowerCase();
-        return /iphone|ipad|ipod/.test( userAgent );
+        return /iphone|ipad|ipod/.test(userAgent);
       };
       // Detects if device is in standalone mode
       const isInStandaloneMode = () => ('standalone' in (window as any).navigator) && ((window as any).navigator.standalone);
