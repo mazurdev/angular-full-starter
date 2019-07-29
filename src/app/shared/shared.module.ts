@@ -10,7 +10,6 @@ import {NgxJsonLdModule} from '@ngx-lite/json-ld';
 // material
 import {MatDialogModule, MatSnackBarModule} from '@angular/material';
 
-
 @NgModule({
   imports: [
     CommonModule,

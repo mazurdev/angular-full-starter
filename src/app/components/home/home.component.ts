@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+// SEO
+import {SeoService} from '../../shared/services/seo.service';
 // dialog
 import {MatDialog} from '@angular/material/dialog';
 import {DialogExampleComponent} from '../../shared/dialog/dialog-example/dialog-example.component';
@@ -11,8 +13,11 @@ import {DialogExampleComponent} from '../../shared/dialog/dialog-example/dialog-
 export class HomeComponent implements OnInit {
 
   constructor(
+    private seoService: SeoService,
     public dialog: MatDialog
   ) {
+    this.seoService.createCanonicalURL();
+    this.seoService.setMeta('home');
   }
 
   openDialog() {
