@@ -1,0 +1,46 @@
+@import "../../../assets/styles/utils/variables";
+
+:host {
+  label {
+    position: relative;
+    z-index: 999;
+    margin-right: -20px !important; // fix width + padding
+    div svg path {
+      stroke: $white;
+    }
+  }
+  svg {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transform: translate3d(0, 0, 0);
+  }
+  path {
+    fill: none;
+    -webkit-transition: stroke-dashoffset .6s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray .6s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+    -o-transition: stroke-dashoffset .6s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray .6s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+    transition: stroke-dashoffset .6s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray .6s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+    stroke-width: 15px;
+    stroke-linecap: round;
+    stroke-dashoffset: 0;
+  }
+  path.topDivider, path.bottomDivider {
+    stroke-dasharray: 240px 950px;
+  }
+  path.middleDivider {
+    stroke-dasharray: 240px 240px;
+  }
+  .cross path.topDivider, .cross path.bottomDivider {
+    stroke-dashoffset: -650px
+  }
+  .cross path.middleDivider {
+    stroke-dashoffset: -115px;
+    stroke-dasharray: 1px 220px;
+  }
+  label:hover {
+    cursor: pointer
+  }
+  .cross svg path {
+    stroke: $white !important;
+  }
+}

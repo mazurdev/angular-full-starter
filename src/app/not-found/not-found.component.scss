@@ -13,14 +13,19 @@
     .not-found-text {
       h1 {
         @include h1;
+        font-weight: bold;
         color: $light;
         text-align: center;
       }
       .not-found-back-btn {
         margin-top: 40px;
         p {
+          @include p;
           color: $light;
           text-align: center;
+          a {
+            font-weight: bold;
+          }
         }
 
       }

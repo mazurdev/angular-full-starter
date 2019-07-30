@@ -1,0 +1,48 @@
+@import "../../../assets/styles/utils/mixins";
+
+footer {
+  background-color: $black;
+  padding: 70px 0 0;
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    img:hover {
+      cursor: pointer;
+    }
+  }
+
+  //----------------------------------------------separator
+  hr.separator {
+    background: $border;
+    // height: 1px;
+    width: 100%;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+    p {
+      @include linksFooter;
+      color: $white;
+    }
+    .privacy-link {
+      a {
+        @include linksFooter;
+        color: $white;
+        transition: color $transition3;
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+      a:hover {
+        cursor: pointer;
+        color: $primary;
+      }
+    }
+
+  }
+
+}

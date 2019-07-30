@@ -13,7 +13,7 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "build:client-and-server-bundles": "npm run build:prod && ng run angular-full-starter:server:production",
     "generate:prerender": "cd dist && node prerender",
-    "cp": "cp -p src/generated/ie-polyfills.min.js dist/browser/generated && cp src/assets/config/.htaccess dist/browser && cp src/assets/config/robots.txt dist/browser && cp src/assets/config/sitemap.xml dist/browser",
+    "cp": "cp src/assets/config/.htaccess dist/browser && cp src/assets/config/robots.txt dist/browser && cp src/assets/config/sitemap.xml dist/browser",
     "analyze": "webpack-bundle-analyzer dist/stats.json",
     "build:stats": "ng build --stats-json",
     "check:https": "cd dist/browser && http-server -o"

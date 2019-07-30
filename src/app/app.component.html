@@ -5,7 +5,8 @@
     </svg>
   </div>
 </div>
-<div [@routeAnimations]="o && o.activatedRouteData && o.activatedRouteData['animation']">
+
+<div [@routeAnimations]="getRouterOutletState(o)">
   <router-outlet #o="outlet"></router-outlet>
 </div>
 

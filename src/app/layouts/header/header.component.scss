@@ -1,0 +1,87 @@
+@import "../../../assets/styles/utils/mixins";
+
+:host {
+
+  /*-----------------------------------------sidenav*/
+
+  .sidenav {
+    z-index: 10;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: $black;
+    overflow-x: hidden;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    ul {
+      width: 90%;
+      margin: 20px 0;
+      flex-direction: column;
+      align-items: center;
+      li {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+        a {
+          @include linksHeader;
+          color: $white;
+        }
+      }
+    }
+  }
+  .sidenav-wrapper {
+    .logo-wrapper-sidenav img:hover {
+      cursor: pointer;
+    }
+  }
+  /*-------------------------------------------------END Sidenav*/
+
+}
+
+header {
+  padding: 13px 0;
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .logo-wrapper {
+      img {
+        width: 70%;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .links-wrapper {
+      display: flex;
+      align-items: baseline;
+      ul {
+        display: flex;
+        li {
+          position: relative;
+          padding-right: 30px;
+          text-align: center;
+          a {
+            @include linksHeader;
+            color: $white;
+            transition: color $transition3;
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+}

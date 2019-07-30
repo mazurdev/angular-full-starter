@@ -16,15 +16,17 @@ declare var $: any;
 export class HeaderComponent implements OnInit {
 
   isBrowser;
-  openSidenav: boolean = false;
   visibilityChanged = 'shown';
   visibilityChangedSticky = 'hidden';
 
   nav = [
-    {url: '/home', name: 'Home'},
-    {url: '/about-us', name: 'About Us'},
-    {url: '/contact-us', name: 'Contact Us'}
+    {url: '/lazy/nested', name: 'Home', label: 'Go to Home', exact: true},
+    {url: '/lazy/nested', name: 'About Us', label: 'Go to About', exact: false},
+    {url: '/lazy/nested', name: 'Contact Us', label: 'Go to Contact Us', exact: false}
   ];
+  trackByItem(index, item) {
+    return (item.id);
+  }
 
   constructor(
     @Inject(WINDOW) private window: Window,
@@ -52,15 +54,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  sidenavOpen() {
-    this.openSidenav = !this.openSidenav;
-    if (this.openSidenav === true) {
-      $('#mySidenav').css('width', '100%');
-    } else {
-      $('#mySidenav').css('width', '0');
-    }
   }
 
 }

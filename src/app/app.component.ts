@@ -2,10 +2,11 @@
 import {ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 // utils
-import {slideInAnimation} from './shared/utils/route-animation';
+import {fadeAnimation} from './shared/utils/route-animation';
 import {CookieService} from 'ngx-cookie-service';
 import {LocalStorageService} from './shared/services/local-storage.service';
 import {DeviceDetectorService} from 'ngx-device-detector';
+import {delayPreloader} from './shared/func';
 // IOS PWA
 import {IosPWAComponent} from './shared/ios-pwa/ios-pwa.component';
 import {MatSnackBar} from '@angular/material';
@@ -15,22 +16,25 @@ declare var $: any;
 @Component({
   selector: 'nv-root',
   templateUrl: './app.component.html',
-  animations: [slideInAnimation]
+  styleUrls: ['./app.component.scss'],
+  animations: [fadeAnimation]
 })
 export class AppComponent implements OnInit {
 
   loading: boolean = true;
   isBrowser;
   cookieValue;
-  deviceInfo = null;
+  deviceBrowser = null;
+  isMobile = null;
+
   schema = {
     '@context': 'http://schema.org',
     '@type': 'WebSite',
-    'author': 'Author',
-    'contentLocation': 'Chapel Hill, NC',
-    'description': 'Description',
-    'name': 'Title',
-    'url': 'https://example.com'
+    author: 'Author',
+    contentLocation: 'Chapel Hill, NC',
+    description: 'Description',
+    name: 'Title',
+    url: 'https://example.com'
   };
 
   constructor(
@@ -46,14 +50,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // detect device
-    this.deviceInfo = this.deviceService.getDeviceInfo();
-    const isMobile = this.deviceService.isMobile();
-    // const isTablet = this.deviceService.isTablet();
-    // const isDesktopDevice = this.deviceService.isDesktop();
-
     // Detects if device is on iOS
-    if (this.isBrowser && this.deviceInfo.browser === 'Safari') {
+    this.getSafariDevice();
+    if (this.isBrowser && this.deviceBrowser.browser === 'Safari') {
       const isIos = () => {
         const userAgent = window.navigator.userAgent.toLowerCase();
         return /iphone|ipad|ipod/.test(userAgent);
@@ -79,27 +78,37 @@ export class AppComponent implements OnInit {
     if (this.isBrowser) {
 
       setTimeout(() => {
+        // hide preloader
         this.loading = false;
+        // show scroll
         this.showScrollWidthNoLoad();
-      }, 1400);
-      if (isMobile && this.deviceInfo.os === 'iOS') {
-        this.removeWebpClass();
-      }
+        // webp images
+        if (this.isMobile && this.deviceBrowser.os === 'iOS') {
+          this.removeWebpClass();
+        }
+      }, delayPreloader);
+
     }
   }
 
+  getSafariDevice() {
+    this.deviceBrowser = this.deviceService.getDeviceInfo();
+    this.isMobile = this.deviceService.isMobile();
+    // console.log(this.deviceBrowser.os);
+    // console.log(this.isMobile);
+  }
+
   removeWebpClass() {
-    // const htmlEl = document.querySelector('html');
-    // htmlEl.classList.remove('webp'); // + webp-alpha webp-animation webp-lossless
     $('html').removeClass('webp webp-alpha webp-animation webp-lossless');
   }
 
   showScrollWidthNoLoad() {
-    // const htmlEl = document.querySelector('html');
-    // const bodyEl = document.querySelector('body');
-    // htmlEl.classList.add('show-scroll');
-    // bodyEl.classList.add('show-scroll');
-    $('html, body').addClass('show-scroll');
+    $('html').addClass('show-scroll');
+  }
+
+
+  public getRouterOutletState(outlet) {
+    return outlet.isActivated ? outlet.activatedRoute : '';
   }
 
 }

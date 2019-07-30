@@ -2,24 +2,33 @@
 
 /*----------------------------sticky-header*/
 nv-header {
-  background-color: darken($white, 10%);
+  background-color: $black;
   z-index: 999;
   position: fixed;
   top: 0;
   width: 100%;
-  transition: $transition;
+  transition: $transition3;
 }
 
+/*----------------------------material*/
+.mat-snack-bar-container {
+  background: $black !important;
+}
 /*----------------------------links*/
 a:hover, button:hover {
   cursor: pointer;
-  transition: $transition;
+  transition: $transition3;
   text-decoration: none;
 }
 a.active {
-  transition: .1s ease-in-out !important;
+  transition: all $transition3;
   color: darken($primary, 25%);
   border-bottom: 2px solid $primary;
+  &:hover {
+    color: darken($primary, 25%);
+    border-bottom: 2px solid $primary;
+    cursor: default;
+  }
 }
 
 /*----------------------------disable-btn*/

@@ -8,13 +8,23 @@
   p {
     @include p;
   }
-  button.btn-secondary {
-    margin: 20px 0;
+  h1, p {
+    margin-bottom: 20px;
   }
   //---------------------------------------------section 1
   .section-1 {
     height: 100vh;
     align-items: center;
+    flex-direction: column;
+    p {
+      max-width: 500px;
+      text-align: center;
+    }
+    .wrapper {
+      align-items: center;
+      flex-direction: column;
+    }
+
   }
 
 }

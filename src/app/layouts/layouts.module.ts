@@ -3,11 +3,13 @@ import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 // utils
 import {RouterModule} from '@angular/router';
+// utils
+import {DirectivesModule} from '../shared/directives/directives.module';
 // app
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
-// utils
-import {DirectivesModule} from '../shared/directives/directives.module';
+// features
+import {BurgerComponent} from '../features/burger/burger.component';
 
 @NgModule({
   imports: [
@@ -22,7 +24,9 @@ import {DirectivesModule} from '../shared/directives/directives.module';
   ],
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    // features
+    BurgerComponent
   ],
 })
-export class WrapperModule {}
+export class LayoutsModule {}

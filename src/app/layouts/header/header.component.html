@@ -1,0 +1,48 @@
+<header class="_max-width _padding-responsive">
+  <nav role="navigation">
+
+    <div class="logo-wrapper" [@visibilityChanged]="visibilityChanged">
+      <img src="../../../assets/icons/icon-128x128.png" alt="Logo" routerLink="/">
+    </div>
+
+    <div class="logo-wrapper" [@visibilityChanged]="visibilityChangedSticky">
+      <img src="../../../assets/icons/icon-72x72.png" alt="Logo Min" routerLink="/">
+    </div>
+
+    <div class="links-wrapper">
+
+      <ul>
+        <ng-container>
+          <li *ngFor="let link of nav; trackBy: trackByItem;">
+            <a [routerLink]="[link.url]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: link.exact }" [attr.aria-label]="link.label">{{ link.name }}</a>
+          </li>
+        </ng-container>
+      </ul>
+
+    </div>
+
+    <!-------------------------------------sidenav-->
+
+    <div class="sidenav-wrapper">
+
+      <div class="logo-wrapper-sidenav">
+        <img src="../../../assets/icons/icon-72x72.png" alt="Logo Sidenav" routerLink="/">
+      </div>
+
+      <nv-burger></nv-burger>
+
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+      <ul class="_flex-center">
+        <ng-container>
+          <li *ngFor="let link of nav; trackBy: trackByItem;">
+            <a [routerLink]="[link.url]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: link.exact }" [attr.aria-label]="link.label">{{ link.name }}</a>
+          </li>
+        </ng-container>
+      </ul>
+
+    </div>
+
+  </nav>
+</header>

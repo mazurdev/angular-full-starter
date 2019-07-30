@@ -42,7 +42,6 @@
   font-style: normal;
   font-weight: normal;
   line-height: normal;
-  text-align: center;
 }
 @mixin p {
   @include rfs(24);
@@ -51,7 +50,6 @@
   font-weight: normal;
   font-size: 24px;
   line-height: normal;
-  text-align: center;
 }
 @mixin subtext {
   @include rfs(16);
@@ -60,7 +58,23 @@
   font-weight: 500;
   line-height: normal;
   text-transform: uppercase;
-  text-align: center;
+}
+//---------------------------------------links
+@mixin linksHeader {
+  @include rfs(18);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+@mixin linksFooter {
+  @include rfs(14);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
 }
 //---------------------------------------others
 @mixin disableAnim {
@@ -88,3 +102,10 @@
   }
 }
 
+@mixin arrowDown($size, $color) {
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+}

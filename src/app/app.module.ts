@@ -7,7 +7,6 @@ import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // universal
 import {TransferHttpCacheModule} from '@nguniversal/common';
-import {HttpClientModule} from '@angular/common/http';
 import {NgtUniversalModule} from '@ng-toolkit/universal';
 // utils
 import {CoreModule} from './core/core.module';
@@ -16,7 +15,7 @@ import {SharedModule} from './shared/shared.module';
 import {HomeComponent} from './components/home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 // header/footer
-import {WrapperModule} from './wrapper/wrapper.module';
+import {LayoutsModule} from './layouts/layouts.module';
 // dialog
 import {DialogExampleComponent} from './shared/dialog/dialog-example/dialog-example.component';
 
@@ -36,7 +35,7 @@ import {DialogExampleComponent} from './shared/dialog/dialog-example/dialog-exam
     SharedModule,
     CoreModule,
     CommonModule,
-    WrapperModule,
+    LayoutsModule,
     // universal
     TransferHttpCacheModule,
     NgtUniversalModule,
