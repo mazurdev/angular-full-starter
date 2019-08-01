@@ -47,6 +47,7 @@
               "src/assets/config",
               "src/assets/icons",
               "src/assets/js",
+              "src/assets/db",
               "src/manifest.json"
             ],
             "styles": [

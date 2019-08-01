@@ -48,7 +48,13 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
+  line-height: normal;
+}
+@mixin caption {
+  @include rfs(16);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: normal;
   line-height: normal;
 }
 @mixin subtext {

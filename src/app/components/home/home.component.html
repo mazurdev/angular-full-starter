@@ -4,12 +4,25 @@
 
   <section class="section-1 _flex-center _max-width">
     <div class="wrapper _padding-depth _flex-center">
-      <h1>Lorem ipsum.</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cumque eaque fugiat, fugit laudantium optio porro quod repellendus soluta unde?</p>
-      <button (click)="openDialog()" class="_btn-secondary">Open dialog</button>
+
+      <h2 *ngIf="!dataUse">Get Data</h2>
+      <ng-container *ngFor="let data of dataHome$; trackBy: trackByItem;">
+
+        <h1>{{ data?.title }}</h1>
+        <p>{{ data?.description }}</p>
+
+        <ul *ngFor="let item of data.items; trackBy: trackByItem;">
+          <li>
+            <span><strong>{{ item.itemTitle }}</strong>: <span>{{ item.itemDescription }}</span></span>
+          </li>
+        </ul>
+
+      </ng-container>
+      <button *ngIf="dataUse" (click)="openDialog()" class="_btn-secondary">Open dialog</button>
+      <button *ngIf="!dataUse" (click)="callApi()" class="_btn-secondary">Call Data</button>
+
     </div>
   </section>
-
   <nv-footer></nv-footer>
 
 </div>

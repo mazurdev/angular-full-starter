@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "title": "Home Title",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cumque eaque fugiat, fugit laudantium optio porro quod repellendus soluta unde?",
+    "items": [
+      {
+        "id": 1,
+        "itemTitle": "Item 1",
+        "itemDescription": "Description 1"
+      },
+      {
+        "id": 2,
+        "itemTitle": "Item 2",
+        "itemDescription": "Description 2"
+      },
+      {
+        "id": 3,
+        "itemTitle": "Item 3",
+        "itemDescription": "Description 3"
+      }
+    ]
+  }
+
+]

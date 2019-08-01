@@ -8,7 +8,7 @@ import {DeviceDetectorModule} from 'ngx-device-detector';
 // SEO
 import {NgxJsonLdModule} from '@ngx-lite/json-ld';
 // material
-import {MatDialogModule, MatSnackBarModule} from '@angular/material';
+import {MatDialogModule, MatProgressSpinnerModule, MatSnackBarModule} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -22,7 +22,8 @@ import {MatDialogModule, MatSnackBarModule} from '@angular/material';
     NgxJsonLdModule,
     // material
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     // forms
@@ -34,7 +35,8 @@ import {MatDialogModule, MatSnackBarModule} from '@angular/material';
     NgxJsonLdModule,
     // material
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule {}

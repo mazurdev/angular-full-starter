@@ -4,6 +4,7 @@
   //---------------------------------------------main
   h1 {
     @include h1;
+    font-weight: bold;
   }
   p {
     @include p;
@@ -16,13 +17,21 @@
     height: 100vh;
     align-items: center;
     flex-direction: column;
-    p {
-      max-width: 500px;
-      text-align: center;
-    }
     .wrapper {
       align-items: center;
       flex-direction: column;
+      p {
+        max-width: 500px;
+        text-align: center;
+      }
+      ul {
+        li {
+          @include caption;
+        }
+      }
+      button {
+        margin-top: 20px;
+      }
     }
 
   }

@@ -18,6 +18,8 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {LayoutsModule} from './layouts/layouts.module';
 // dialog
 import {DialogExampleComponent} from './shared/dialog/dialog-example/dialog-example.component';
+// features
+import {LoaderComponent} from './features/loader.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {DialogExampleComponent} from './shared/dialog/dialog-example/dialog-exam
     HomeComponent,
     NotFoundComponent,
     // dialog
-    DialogExampleComponent
+    DialogExampleComponent,
+    // features
+    LoaderComponent
   ],
   imports: [
     // core
