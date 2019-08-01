@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Inject, OnInit, PLATFORM_ID, Self} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, Self} from '@angular/core';
 // utils
 import {SeoService} from '../../shared/services/seo.service';
 import {isPlatformBrowser} from '@angular/common';
@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
     private seoService: SeoService,
     private dialog: MatDialog,
     private homeService: HomeService,
+    private cdr: ChangeDetectorRef,
     @Self() private ngOnDestroy$: NgOnDestroy
   ) {
     this.seoService.createCanonicalURL();
@@ -46,7 +47,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.getHomeInfo();
   }
 
   trackByItem(index, item) {
@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
       .pipe(takeUntil(this.ngOnDestroy$))
       .subscribe(data => {
         this.dataHome$ = data;
+        this.cdr.detectChanges();
         // console.log(this.dataHome$);
       }, (e: HttpErrorResponse) => console.log(e));
   }
