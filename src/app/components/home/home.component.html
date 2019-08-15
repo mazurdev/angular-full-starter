@@ -8,21 +8,27 @@
       <h2 *ngIf="!dataUse">Get Data</h2>
       <ng-container *ngFor="let data of dataHome$; trackBy: trackByItem;">
 
-        <h1>{{ data?.title }}</h1>
-        <p>{{ data?.description }}</p>
+        <div [@showing] class="_flex-center">
+          <h1>{{ data?.title }}</h1>
+          <p>{{ data?.description }}</p>
 
-        <ul *ngFor="let item of data.items; trackBy: trackByItem;">
-          <li>
-            <span><strong>{{ item.itemTitle }}</strong>: <span>{{ item.itemDescription }}</span></span>
-          </li>
-        </ul>
+          <ul *ngFor="let item of data.items; trackBy: trackByItem;">
+            <li>
+            <span>
+              <strong>{{ item.itemTitle }}</strong>: <span>{{ item.itemDescription }}</span>
+            </span>
+            </li>
+          </ul>
+        </div>
+
 
       </ng-container>
-      <button *ngIf="dataUse" (click)="openDialog()" class="_btn-secondary">Open dialog</button>
+      <button *ngIf="dataUse" (click)="openDialog()" class="_btn-secondary" [@showing]>Open dialog</button>
       <button *ngIf="!dataUse" (click)="callApi()" class="_btn-secondary">Call Data</button>
 
     </div>
   </section>
+
   <nv-footer></nv-footer>
 
 </div>

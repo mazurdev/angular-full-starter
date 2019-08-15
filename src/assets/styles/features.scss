@@ -14,6 +14,15 @@ nv-header {
 .mat-snack-bar-container {
   background: $black !important;
 }
+.cdk-overlay-dark-backdrop {
+  background: $overlay !important;
+}
+.mat-dialog-container {
+  border-radius: $radius-btn !important;
+}
+.mat-progress-spinner.mat-progress-spinner-indeterminate-animation[mode=indeterminate] circle {
+  stroke-width: 4% !important;
+}
 /*----------------------------links*/
 a:hover, button:hover {
   cursor: pointer;

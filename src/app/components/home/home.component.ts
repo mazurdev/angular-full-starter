@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, P
 // utils
 import {SeoService} from '../../shared/services/seo.service';
 import {isPlatformBrowser} from '@angular/common';
+import {animations} from '../../shared/utils/animations';
 // dialog
 import {MatDialog} from '@angular/material/dialog';
 import {DialogExampleComponent} from '../../shared/dialog/dialog-example/dialog-example.component';
@@ -17,6 +18,7 @@ import {HomeInterface} from '../../shared/models/home.interface';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   providers: [NgOnDestroy],
+  animations: [animations],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {

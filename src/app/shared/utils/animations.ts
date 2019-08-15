@@ -1,5 +1,9 @@
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
+// variables
+const easing = '.6s cubic-bezier(.55,.085,.68,.53)';
+const timings = '.6s';
+
 export const animations = [
   trigger('visibilityChanged', [
     state('shown', style({
@@ -10,20 +14,20 @@ export const animations = [
       display: 'none',
       opacity: 0
     })),
-    transition('shown => hidden', animate('.2s')),
-    transition('hidden => shown', animate('.2s')),
+    transition('shown => hidden', animate(`${timings}`)),
+    transition('hidden => shown', animate(`${timings}`)),
   ]),
 
-  trigger('EnterLeave', [
-    state('flyIn', style({
-      transform: 'translateX(0)'
-    })),
-    transition(':enter', [
-      style({transform: 'translateX(-100%)'}),
-      animate('0.5s 300ms ease-in')]),
-    transition(':leave', [
-      animate('0.3s ease-out', style({
-        transform: 'translateX(100%)'
-      }))
-    ])])
+  trigger(
+    'showing', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate(`${easing}`, style({opacity: 1}))
+      ]),
+      transition(':leave', [
+        style({opacity: 1}),
+        animate(`${easing}`, style({opacity: 0}))
+      ])
+    ]
+  )
 ];

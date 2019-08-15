@@ -1,7 +1,8 @@
 @import "../../../assets/styles/utils/mixins";
 
 .page-home {
-  //---------------------------------------------main
+
+  //--------------------------------------------- main
   h1 {
     @include h1;
     font-weight: bold;
@@ -12,7 +13,7 @@
   h1, p {
     margin-bottom: 20px;
   }
-  //---------------------------------------------section 1
+  //--------------------------------------------- section 1
   .section-1 {
     height: 100vh;
     align-items: center;
@@ -20,6 +21,10 @@
     .wrapper {
       align-items: center;
       flex-direction: column;
+      & > div {
+        align-items: center;
+        flex-direction: column;
+      }
       p {
         max-width: 500px;
         text-align: center;
