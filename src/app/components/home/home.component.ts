@@ -23,6 +23,9 @@ import {HomeInterface} from '../../shared/models/home.interface';
 })
 export class HomeComponent implements OnInit {
 
+
+  data: string[];
+
   isBrowser;
   dataHome$: HomeInterface[];
   dataUse = false;

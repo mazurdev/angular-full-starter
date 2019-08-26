@@ -36,7 +36,7 @@ import 'core-js/es/map';
 import 'core-js/es/set';
 import 'core-js/es/array';
 import 'classlist.js'; // Run `npm install --save classlist.js`.
-import 'web-animations-js'; // Run `npm install --save web-animations-js`.
+// import 'web-animations-js'; // Run `npm install --save web-animations-js`.
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */

@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
   selector: 'nv-nested',
   templateUrl: './nested.component.html',
-  styleUrls: ['./nested.component.scss']
+  styleUrls: ['./nested.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NestedComponent implements OnInit {
+export class NestedComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input() data: string[];
+  constructor() {}
 
 }

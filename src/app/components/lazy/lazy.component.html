@@ -1,0 +1,12 @@
+<section class="change-detection-example">
+
+  <input #newItem type="text" placeholder="Enter a new items">
+  <button (click)="addItem(newItem.value)" class="_btn-secondary">Add item</button>
+
+  <nv-nested [data]="items"></nv-nested>
+
+  <h1>{{book}}</h1>
+
+  <button (click)="applyChanges()">Apply</button>
+
+</section>
