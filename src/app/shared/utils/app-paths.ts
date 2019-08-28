@@ -1,5 +1,5 @@
 export const paths = {
   home: '/',
   lazy: 'lazy',
-  lazyNested: 'lazy/nested'
+  lazyNested: 'lazy/articles'
 };

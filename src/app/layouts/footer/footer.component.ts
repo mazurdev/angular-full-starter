@@ -10,9 +10,9 @@ export class FooterComponent implements OnInit {
   currentYear: number = new Date().getFullYear();
 
   linksPrivacy = [
-    {url: '/lazy/nested', name: 'Terms Of Use', label: 'Go to Terms Of Use'},
-    {url: '/lazy/nested', name: 'Privacy Policy', label: 'Go to Privacy Policy'},
-    {url: '/lazy/nested', name: 'Cookie Policy', label: 'Go to Cookie Policy'}
+    {url: '/lazy/articles', name: 'Terms Of Use', label: 'Go to Terms Of Use'},
+    {url: '/lazy/articles', name: 'Privacy Policy', label: 'Go to Privacy Policy'},
+    {url: '/lazy/articles', name: 'Cookie Policy', label: 'Go to Cookie Policy'}
   ];
   trackByItem(index, item) {
     return (item.id);

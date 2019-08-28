@@ -2,5 +2,5 @@ export const ROUTES = [
   '/',
   '/home',
   '/lazy',
-  '/lazy/nested'
+  '/lazy/articles'
 ];

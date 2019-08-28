@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./components/lazy/lazy.module').then(m => m.LazyModule),
     data: {animation: 'Lazy'}
   },
+  {
+    path: 'cd-wrapper',
+    loadChildren: () => import('./components/cd-wrapper/cd-wrapper.module').then(m => m.CdWrapperModule)
+  },
   // 404
   {path: '**', resolve: {path: PathResolveService}, component: NotFoundComponent}
 ];

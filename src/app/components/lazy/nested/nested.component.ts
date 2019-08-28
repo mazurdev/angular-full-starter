@@ -1,14 +1,13 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'nv-nested',
   templateUrl: './nested.component.html',
-  styleUrls: ['./nested.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./nested.component.scss']
 })
 export class NestedComponent {
 
-  @Input() data: string[];
-  constructor() {}
+  constructor() {
+  }
 
 }

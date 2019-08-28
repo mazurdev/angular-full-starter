@@ -20,9 +20,9 @@ export class HeaderComponent implements OnInit {
   visibilityChangedSticky = 'hidden';
 
   nav = [
-    {url: '/lazy/nested', name: 'Home', label: 'Go to Home', exact: true},
-    {url: '/lazy/nested', name: 'About Us', label: 'Go to About', exact: false},
-    {url: '/lazy/nested', name: 'Contact Us', label: 'Go to Contact Us', exact: false}
+    {url: '/lazy/articles', name: 'Home', label: 'Go to Home', exact: true},
+    {url: '/lazy/articles', name: 'About Us', label: 'Go to About', exact: false},
+    {url: '/lazy/articles', name: 'Contact Us', label: 'Go to Contact Us', exact: false}
   ];
   trackByItem(index, item) {
     return (item.id);
