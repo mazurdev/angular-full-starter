@@ -12,7 +12,7 @@
     "build:prerender": "npm run build:client-and-server-bundles && npm run compile:server && npm run generate:prerender && node index-minifier.js",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "build:client-and-server-bundles": "npm run build:prod && ng run angular-full-starter:server:production",
-    "generate:prerender": "cd dist && node prerender"
+    "generate:prerender": "cd dist && node prerender",
     "analyze": "webpack-bundle-analyzer dist/stats.json",
     "build:stats": "ng build --stats-json",
     "check:https": "cd dist/browser && http-server -o"
