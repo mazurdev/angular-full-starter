@@ -1,17 +1,20 @@
 <p align="center">
-  <a href="https://github.com/mazurdev/web-development-articles">
+  <a href="https://github.com/mazurdev/angular-full-starter">
     <img src="https://raw.githubusercontent.com/mazurdev/angular-full-starter/master/meta-assets/angular-logo.png" alt="Angular Logo" width="96" height="96">
   </a>
   <h1 align="center">ANGULAR FULL STARTER</h1>
   <p align="center">Angular starter, which combines all the necessary components for writing a complete project</p>
-  <p align="center">
+  
+</p>
+
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://github.com/mazurdev/angular-full-starter/meta-assets/preview.webm)
+
+<p align="center">
    <a href="https://twitter.com/mazurdev"><img src="https://img.shields.io/badge/feedback-@mazurdev-blue.svg" /></a>
    <br>
    <sub>Check out my [blog-portfolio](https://mazurdev.com/)</sub>
-  </p>
-  <br>
 </p>
-
+  
 ## Table of Content
 
   * [Getting Started](#getting-started)
