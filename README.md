@@ -53,7 +53,6 @@
   * `npm run build:prerender` - production build (PRERENDER)
 
 #### Others
-  * `npm run cp` - copy assets files to production folder
   * `npm run build:stats` - generate webpack-bundle application
   * `npm run analyze` - analyze webpack-bundle application
   * `npm run check:https` - open the application by https
@@ -88,8 +87,8 @@ ng add @ng-toolkit/pwa
 ```bash
 ng update -g @angular/cli
 ng update @angular/cli @angular/core
-ng update @angular/material
 ng update @nguniversal/common @nguniversal/express-engine @nguniversal/module-map-ngfactory-loader
 ng update @ng-toolkit/universal @ng-toolkit/pwa
+ng update @angular/material
 ```
 > If need - fix this (https://github.com/maciejtreder/ng-toolkit/issues/639)
