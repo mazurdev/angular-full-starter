@@ -4,6 +4,7 @@ const domino = require('domino');
 const template = readFileSync(join('dist', 'browser', 'index.html'), 'utf8');
 const win = domino.createWindow(template);
 global['window'] = win;
+
 Object.defineProperty(win.document.body.style, 'transform', {
   value: () => {
     return {
@@ -22,7 +23,7 @@ import {ngExpressEngine} from '@nguniversal/express-engine';
 // Import module map for lazy loading
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 
-import * as express from 'express';
+import express from 'express';
 import {join} from 'path';
 
 // Faster server renders w/ Prod mode (dev mode never needed)

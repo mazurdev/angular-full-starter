@@ -1,4 +1,6 @@
+// core
 import {Component, OnInit} from '@angular/core';
+// utils
 import {ActivatedRoute} from '@angular/router';
 import {take} from 'rxjs/operators';
 

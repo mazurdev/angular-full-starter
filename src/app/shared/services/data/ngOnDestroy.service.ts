@@ -7,7 +7,7 @@ export class NgOnDestroy extends Subject<null> implements OnDestroy {
   ngOnDestroy() {
     this.next(null);
     this.complete();
-    console.log('Destroyed subscription');
+    // console.log('Destroyed subscription');
   }
 
 }

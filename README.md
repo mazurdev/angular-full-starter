@@ -25,7 +25,7 @@
 2 - Go to "angular-full-starter" folder
 3 - Change the name of the project "angular-full-starter" to your in files: "angular.json", "package.json", "manifest.json" and "README.md"
 4 - Change "baseUrl" variable in "environment.ts" and "environment.prod.ts"
-5 - npm run start || yarn start
+5 - npm run start
 ```
 > If need - [Update packages](#update-packages)
 
@@ -63,8 +63,7 @@
   * `lazy-loading`
   * custom preloadStrategy
   * maximum responsive mixins
-  * custom components in `SharedModule`
-  * `jQuery` to simplify javascript usage
+  * use `SharedModule` and `CoreModule`
   * present `base application URL`: "environment.ts" and "environment.prod.ts"
   * present modalComponent
   * present PWA for iOS
@@ -89,6 +88,7 @@ ng update -g @angular/cli
 ng update @angular/cli @angular/core
 ng update @nguniversal/common @nguniversal/express-engine @nguniversal/module-map-ngfactory-loader
 ng update @ng-toolkit/universal @ng-toolkit/pwa
-ng update @angular/material
 ```
+> If need - update "material" (ng update @angular/material)
+
 > If need - fix this (https://github.com/maciejtreder/ng-toolkit/issues/639)

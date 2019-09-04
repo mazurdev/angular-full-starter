@@ -2,7 +2,7 @@
 import {ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 // utils
-import {fadeAnimation} from './shared/utils/route-animation';
+import {routeAnimations} from './shared/utils/route-animation';
 import {CookieService} from 'ngx-cookie-service';
 import {LocalStorageService} from './shared/services/local-storage.service';
 import {DeviceDetectorService} from 'ngx-device-detector';
@@ -10,14 +10,12 @@ import {delayPreloader} from './shared/func/variables';
 // IOS PWA
 import {IosPWAComponent} from './shared/ios-pwa/ios-pwa.component';
 import {MatSnackBar} from '@angular/material';
-// jquery
-declare var $: any;
 
 @Component({
   selector: 'nv-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [fadeAnimation]
+  animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
 
@@ -50,6 +48,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    // welcome
+    console.log('%c ANGULAR FULL STARTER 😎 | Dev team', 'background:#E62893; color:#ffffff; padding:10px');
     // Detects if device is on iOS
     this.getSafariDevice();
     if (this.isBrowser && this.deviceBrowser.browser === 'Safari') {
@@ -99,13 +99,14 @@ export class AppComponent implements OnInit {
   }
 
   removeWebpClass() {
-    $('html').removeClass('webp webp-alpha webp-animation webp-lossless');
+    const $html = document.querySelector('html');
+    $html.classList.remove('webp webp-alpha webp-animation webp-lossless');
   }
 
   showScrollWidthNoLoad() {
-    $('html').addClass('show-scroll');
+    const $html = document.querySelector('html');
+    $html.classList.add('show-scroll');
   }
-
 
   public getRouterOutletState(outlet) {
     return outlet.isActivated ? outlet.activatedRoute : '';

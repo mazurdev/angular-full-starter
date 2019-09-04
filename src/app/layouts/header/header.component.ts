@@ -1,23 +1,14 @@
 // core
-import {Component, HostListener, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {Component} from '@angular/core';
 // utils
-import {WINDOW} from '@ng-toolkit/universal';
-import {isPlatformBrowser} from '@angular/common';
-import {animations} from '../../shared/utils/animations';
-// jquery
-declare var $: any;
+
 
 @Component({
   selector: 'nv-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  animations: [animations]
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
-  isBrowser;
-  visibilityChanged = 'shown';
-  visibilityChangedSticky = 'hidden';
+export class HeaderComponent {
 
   nav = [
     {url: '/lazy/articles', name: 'Home', label: 'Go to Home', exact: true},
@@ -29,31 +20,7 @@ export class HeaderComponent implements OnInit {
   }
 
   constructor(
-    @Inject(WINDOW) private window: Window,
-    @Inject(PLATFORM_ID) private platformId,
   ) {
-    this.isBrowser = isPlatformBrowser(platformId);
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    // isBrowser
-    if (this.isBrowser) {
-      if (this.window.innerWidth > 812) {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-          this.visibilityChanged = 'hidden';
-          this.visibilityChangedSticky = 'shown';
-        } else {
-          this.visibilityChangedSticky = 'hidden';
-          this.visibilityChanged = 'shown';
-        }
-      }
-    }
-
-
-  }
-
-  ngOnInit() {
   }
 
 }

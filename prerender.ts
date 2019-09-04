@@ -5,14 +5,11 @@ import {readFileSync, writeFileSync, existsSync, mkdirSync} from 'fs';
 import {join} from 'path';
 
 const domino = require('domino');
-// const fs = require('fs');
-// const path = require('path');
 const DIST_FOLDER_GLOBAL = join(process.cwd(), 'browser');
 const template = readFileSync(join(DIST_FOLDER_GLOBAL, 'index.html'), 'utf8');
-// const template = fs.readFileSync(path.join(DIST_FOLDER_GLOBAL, 'index.html')).toString();
-
 const win = domino.createWindow(template);
 global['window'] = win;
+
 Object.defineProperty(win.document.body.style, 'transform', {
   value: () => {
     return {
@@ -23,8 +20,6 @@ Object.defineProperty(win.document.body.style, 'transform', {
 });
 global['document'] = win.document;
 global['CSS'] = null;
-
-
 
 import {enableProdMode} from '@angular/core';
 // Faster server renders w/ Prod mode (dev mode never needed)

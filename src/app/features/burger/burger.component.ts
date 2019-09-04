@@ -1,5 +1,4 @@
-import {Component, Inject, PLATFORM_ID} from '@angular/core';
-import {isPlatformBrowser} from '@angular/common';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'nv-burger',
@@ -8,24 +7,18 @@ import {isPlatformBrowser} from '@angular/common';
 })
 export class BurgerComponent {
 
-  isBrowser;
   openSidenav: boolean = false;
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId,
-  ) {
-    this.isBrowser = isPlatformBrowser(platformId);
-  }
+  constructor() {}
 
   sidenavOpen() {
     this.openSidenav = !this.openSidenav;
-    // isBroser
-    if (this.isBrowser) {
-      if (this.openSidenav === true) {
-        $('#mySidenav').css('width', '100%');
-      } else {
-        $('#mySidenav').css('width', '0');
-      }
+    const mySidenav = document.getElementById('mySidenav') as HTMLElement;
+
+    if (this.openSidenav === true) {
+      mySidenav.style.width = '100%';
+    } else {
+      mySidenav.style.width = '0';
     }
   }
 

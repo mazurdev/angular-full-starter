@@ -1,5 +1,12 @@
 {
   "compileOnSave": false,
+  "include": [
+    "src/**/*.ts",
+    "src/app/app.server.module.ts",
+    "src/main.ts",
+    "src/polyfills.ts",
+    "src/environments/environment.prod.ts"
+  ],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -23,6 +30,11 @@
       "esnext"
     ]
   },
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "_addition"
+  ],
   "angularCompilerOptions": {
     "preserveWhitespaces": false
   }

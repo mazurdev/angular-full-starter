@@ -24,10 +24,11 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
+          "/assets/img/**",
           "/assets/config/**",
           "/assets/icons/**",
-          "/assets/img/**",
           "/assets/js/**",
+          "/assets/db/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
