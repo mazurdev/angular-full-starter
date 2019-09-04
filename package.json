@@ -1,6 +1,9 @@
 {
   "name": "angular-full-starter",
   "version": "1.0.0",
+  "license": "MIT",
+  "author": "Vladislav Mazur",
+  "description": "Angular starter, which combines all the necessary components for writing a complete project",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=4204",
