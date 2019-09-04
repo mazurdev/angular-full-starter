@@ -8,9 +8,7 @@
 </p>
 
 <p align="center">
-
-  ![Preview](https://raw.githubusercontent.com/mazurdev/angular-full-starter/master/meta-assets/preview.gif "Preview")
-
+  <img src="https://raw.githubusercontent.com/mazurdev/angular-full-starter/master/meta-assets/preview.gif">
 </p>
 
 <p align="center">
