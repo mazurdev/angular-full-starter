@@ -7,7 +7,7 @@
   
 </p>
 
-![Preview](https://raw.githubusercontent.com/mazurdev/angular-full-starter/blob/master/meta-assets/preview.gif "Preview")
+![Preview](https://raw.githubusercontent.com/mazurdev/angular-full-starter/master/meta-assets/preview.gif "Preview")
 
 <p align="center">
    <a href="https://twitter.com/mazurdev"><img src="https://img.shields.io/badge/feedback-@mazurdev-blue.svg" /></a>
