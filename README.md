@@ -7,7 +7,7 @@
   
 </p>
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://github.com/mazurdev/angular-full-starter/meta-assets/preview.webm)
+![Preview](https://raw.githubusercontent.com/mazurdev/angular-full-starter/blob/master/meta-assets/preview.gif "Preview")
 
 <p align="center">
    <a href="https://twitter.com/mazurdev"><img src="https://img.shields.io/badge/feedback-@mazurdev-blue.svg" /></a>
