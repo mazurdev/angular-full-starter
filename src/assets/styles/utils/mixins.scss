@@ -43,6 +43,41 @@
   font-weight: normal;
   line-height: normal;
 }
+@mixin h2 {
+  @include rfs(48);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+@mixin h3 {
+  @include rfs(36);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+@mixin h4 {
+  @include rfs(24);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+@mixin h5 {
+  @include rfs(18);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+}
+@mixin h6 {
+  @include rfs(14);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+}
 @mixin p {
   @include rfs(24);
   font-family: 'Source Sans Pro', sans-serif;
@@ -65,6 +100,13 @@
   line-height: normal;
   text-transform: uppercase;
 }
+//---------------------------------------include mixins to heading tags
+h1 {@include h1;}
+h2 {@include h2;}
+h3 {@include h3;}
+h4 {@include h4;}
+h5 {@include h5;}
+h6 {@include h6;}
 //---------------------------------------links
 @mixin linksHeader {
   @include rfs(18);
