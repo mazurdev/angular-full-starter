@@ -23,14 +23,16 @@
   * [Stack](#stack)
   * [Useful Commands](#useful-commands)
   * [Features](#features)
+  * [License](#license)
 
 ## Getting started
 ```bash
 1 - git clone https://github.com/mazurdev/angular-full-starter.git
 2 - Go to "angular-full-starter" folder
-3 - Change the name of the project "angular-full-starter" to your in files: "angular.json", "package.json", "manifest.json" and "README.md"
-4 - Change "baseUrl" variable in "environment.ts" and "environment.prod.ts"
-5 - npm run start
+3 - npm install
+4 - Change the name of the project "angular-full-starter" to your in files: "angular.json", "package.json", "manifest.json" and "README.md"
+5 - Change "baseUrl" variable in "environment.ts" and "environment.prod.ts"
+6 - npm run start
 ```
 > If need - [Update packages](#update-packages)
 
@@ -89,11 +91,17 @@ ng add @ng-toolkit/pwa
 ## Update packages
 
 ```bash
-ng update -g @angular/cli
+npm update -g @angular/cli
 ng update @angular/cli @angular/core
+ng update @angular/material
 ng update @nguniversal/common @nguniversal/express-engine @nguniversal/module-map-ngfactory-loader
-ng update @ng-toolkit/universal @ng-toolkit/pwa
+ng update @ng-toolkit/universal @ng-toolkit/pwa @angular/pwa
+ng update @ngrx/core @ngrx/effects @ngrx/router-store @ngrx/store @ngrx/store-devtools
 ```
 > If need - update "material" (ng update @angular/material)
 
 > If need - fix this (https://github.com/maciejtreder/ng-toolkit/issues/639)
+
+## License
+
+[MIT License](https://raw.githubusercontent.com/mazurdev/angular-full-starter/master/LICENSE)

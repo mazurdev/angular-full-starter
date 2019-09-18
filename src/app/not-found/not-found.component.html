@@ -3,12 +3,13 @@
 
     <div class="not-found-text">
 
+      <img src="https://cdn.rawgit.com/ahmedhosna95/upload/1731955f/sad404.svg" alt="404">
+
       <h1><strong>404</strong> - Page not found</h1>
 
       <div class="not-found-back-btn">
-        <p *ngIf="path">Go to the
-          <a [routerLink]="path" aria-label="Go to previous page" class="btn-primary">{{ path }}</a>
-          page
+        <p class="back __btn-go-back" routerLink="/">Go to the
+          <a aria-label="Go to previous page" class="btn-primary">Home </a>page
         </p>
       </div>
 

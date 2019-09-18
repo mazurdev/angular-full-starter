@@ -157,3 +157,11 @@ h6 {@include h6;}
   border-right: $size solid transparent;
   border-top: $size solid $color;
 }
+//---------------------------------------bg
+@mixin gradientChanged {
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: gradientChanged 15s ease infinite;
+  -moz-animation: gradientChanged 15s ease infinite;
+  animation: gradientChanged 15s ease infinite;
+}

@@ -2,10 +2,7 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 // app
-import {NotFoundComponent} from './not-found/not-found.component';
-// 404
 import {HomeComponent} from './components/home/home.component';
-import {PathResolveService} from './shared/services/path-resolve.service';
 
 const routes: Routes = [
   {
@@ -20,7 +17,12 @@ const routes: Routes = [
     data: {animation: 'Lazy'}
   },
   // 404
-  {path: '**', resolve: {path: PathResolveService}, component: NotFoundComponent}
+  // 404
+  {
+    path: '404',
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule),
+  },
+  {path: '**', redirectTo: '/404', pathMatch: 'full'}
 ];
 
 @NgModule({

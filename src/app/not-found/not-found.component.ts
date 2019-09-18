@@ -1,8 +1,7 @@
 // core
 import {Component, OnInit} from '@angular/core';
 // utils
-import {ActivatedRoute} from '@angular/router';
-import {take} from 'rxjs/operators';
+import {NotFoundService} from '../shared/services/not-found.service';
 
 @Component({
   selector: 'nv-not-found',
@@ -11,18 +10,15 @@ import {take} from 'rxjs/operators';
 })
 export class NotFoundComponent implements OnInit {
 
-  path: string;
+  public status: { code: number; message: string };
 
   constructor(
-    private route: ActivatedRoute
+    private notFoundService: NotFoundService
   ) {
   }
 
-  ngOnInit() {
-    this.route.data.pipe(take(1))
-      .subscribe((data: { path: string }) => {
-        this.path = data.path;
-      });
+  ngOnInit(): void {
+    this.notFoundService.setStatus(404, 'Not Found');
   }
 
 }

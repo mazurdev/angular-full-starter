@@ -25,6 +25,7 @@
       "resources": {
         "files": [
           "/assets/img/**",
+          "/assets/splashscreens/**",
           "/assets/config/**",
           "/assets/icons/**",
           "/assets/js/**",

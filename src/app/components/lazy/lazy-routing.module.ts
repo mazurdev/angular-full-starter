@@ -7,7 +7,7 @@ import {NestedComponent} from './nested/nested.component';
 
 const routes: Routes = [
   {path: '', component: LazyComponent},
-  {path: 'books', component: NestedComponent, data: {animation: 'Nested'}}
+  {path: 'nested', component: NestedComponent, data: {animation: 'Nested'}}
 ];
 
 @NgModule({

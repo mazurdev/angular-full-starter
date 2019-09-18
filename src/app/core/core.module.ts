@@ -1,6 +1,6 @@
 // core
 import {APP_BASE_HREF, CommonModule} from '@angular/common';
-import {NgModule, Optional, SkipSelf} from '@angular/core';
+import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
 // utils
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {environment} from '../../environments/environment';
@@ -14,20 +14,6 @@ import {LoaderInterceptor} from '../shared/utils/loader.iterceptor';
     CommonModule,
     HttpClientModule
   ],
-  declarations: [],
-  providers: [
-    CookieService,
-    LoaderService,
-    {
-      provide: APP_BASE_HREF,
-      useValue: environment.baseUrl
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoaderInterceptor,
-      multi: true
-    }
-  ]
 })
 export class CoreModule {
   constructor(
@@ -36,5 +22,23 @@ export class CoreModule {
     if (parentModule) {
       throw new Error('CoreModule is already loaded. Import only in AppModule');
     }
+  }
+  static forRoot(): ModuleWithProviders{
+    return {
+      ngModule: CoreModule,
+      providers: [
+        CookieService,
+        LoaderService,
+        {
+          provide: APP_BASE_HREF,
+          useValue: environment.baseUrl
+        },
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass: LoaderInterceptor,
+          multi: true
+        }
+      ]
+    };
   }
 }
