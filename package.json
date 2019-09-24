@@ -82,11 +82,5 @@
     "node": ">= 10.0.0",
     "npm": ">= 6.0.0",
     "yarn": ">= 1.0.0"
-  },
-  "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "Firefox ESR",
-    "not ie <= 8"
-  ]
+  }
 }

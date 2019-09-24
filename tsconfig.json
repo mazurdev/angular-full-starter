@@ -13,7 +13,8 @@
       "@shared/*": ["src/app/shared/*"],
       "@core/*": ["src/app/core/*"],
       "@layouts/*": ["src/app/layouts/*"],
-      "@features/*": ["src/app/features/*"]
+      "@features/*": ["src/app/features/*"],
+      "@components/*": ["src/app/components/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

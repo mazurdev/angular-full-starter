@@ -8,6 +8,7 @@ import {environment} from '../../environments/environment';
 import {CookieService} from 'ngx-cookie-service';
 import {LoaderService} from '@shared/services/data/loader.service';
 import {LoaderInterceptor} from '@shared/utils/loader.iterceptor';
+import {CustomPreloadStrategy} from '@shared/utils/customPreloadStrategy';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
+        CustomPreloadStrategy,
         CookieService,
         LoaderService,
         {

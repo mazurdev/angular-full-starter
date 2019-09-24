@@ -2,13 +2,12 @@
 import {ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, Renderer2} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 // utils
-import {routeAnimations} from './shared/utils/route-animation';
+import {routeAnimations} from '@shared/utils/route-animation';
 import {CookieService} from 'ngx-cookie-service';
-import {LocalStorageService} from './shared/services/local-storage.service';
+import {LocalStorageService} from '@shared/services/local-storage.service';
 import {DeviceDetectorService} from 'ngx-device-detector';
-import {delayPreloader} from './shared/func/variables';
 // IOS PWA
-import {IosPWAComponent} from './shared/ios-pwa/ios-pwa.component';
+import {IosPWAComponent} from '@shared/ios-pwa/ios-pwa.component';
 import {MatSnackBar} from '@angular/material';
 
 @Component({
@@ -18,7 +17,6 @@ import {MatSnackBar} from '@angular/material';
 })
 export class AppComponent implements OnInit {
 
-  loading: boolean = true;
   isBrowser;
   deviceBrowser = null;
   isMobile = null;

@@ -1,4 +1,4 @@
-<header>
+<header class="__padding-depth">
   <nav role="navigation">
 
     <div class="logo-wrapper">
@@ -30,7 +30,7 @@
     </div>
 
     <div id="mySidenav" class="sidenav">
-      <ul class="_flex-center">
+      <ul class="__flex-center">
         <ng-container>
           <li *ngFor="let link of nav; trackBy: trackByItem;">
             <a [routerLink]="[link.url]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: link.exact }" [attr.aria-label]="link.label">{{ link.name }}</a>

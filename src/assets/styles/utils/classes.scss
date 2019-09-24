@@ -1,13 +1,13 @@
 @import "variables";
 
 /*-------------------------------------------------flexbox*/
-._flex-center {
+.__flex-center {
   display: flex;
   justify-content: center;
 }
 
 /*-------------------------------------------------buttons*/
-._btn-primary {
+.__btn-primary {
   border-radius: $radius-btn;
   padding: 15px 40px;
   margin: 0 2%;
@@ -20,7 +20,7 @@
     background: $primary;
   }
 }
-._btn-secondary {
+.__btn-secondary {
   border-radius: $radius-btn;
   padding: 15px 40px;
   margin: 0 2%;
@@ -33,6 +33,6 @@
     background: darken($primary, 15%);
   }
 }
-._padding-depth {
+.__padding-depth {
   padding: 25px;
 }

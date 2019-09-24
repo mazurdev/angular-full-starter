@@ -7,7 +7,7 @@ import {AppModule} from './app.module';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 // IOS PWA
-import {IosPWAComponent} from './shared/ios-pwa/ios-pwa.component';
+import {IosPWAComponent} from '@shared/ios-pwa/ios-pwa.component';
 
 @NgModule({
   imports: [

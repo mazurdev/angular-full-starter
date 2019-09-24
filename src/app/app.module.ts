@@ -9,14 +9,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TransferHttpCacheModule} from '@nguniversal/common';
 import {NgtUniversalModule} from '@ng-toolkit/universal';
 // utils
-import {CoreModule} from './core/core.module';
-import {SharedModule} from './shared/shared.module';
+import {CoreModule} from '@core/core.module';
+import {SharedModule} from '@shared/shared.module';
 // app
-import {HomeComponent} from './components/home/home.component';
-import {LayoutsModule} from './layouts/layouts.module';
+import {HomeComponent} from '@components/home/home.component';
+import {LayoutsModule} from '@layouts/layouts.module';
 // features
-import {DialogExampleComponent} from './shared/dialog/dialog-example/dialog-example.component';
-import {LoaderComponent} from './features/loader.component';
+import {DialogExampleComponent} from '@shared/dialog/dialog-example/dialog-example.component';
+import {LoaderComponent} from '@features/loader.component';
 
 @NgModule({
   declarations: [

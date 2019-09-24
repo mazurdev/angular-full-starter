@@ -4,7 +4,7 @@ const easing = '.6s cubic-bezier(1, .26, 0, 1)';
 
 export const routeAnimations =
 
-  trigger('routeAnimation', [
+  trigger('routeAnimations', [
 
     transition( '* => *', [
 

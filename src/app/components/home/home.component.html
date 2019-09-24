@@ -2,13 +2,13 @@
 
   <nv-header></nv-header>
 
-  <section class="section-1 _flex-center">
-    <div class="wrapper _padding-depth _flex-center">
+  <section class="section-1 __flex-center">
+    <div class="wrapper __padding-depth __flex-center">
 
       <h2 *ngIf="!dataUse">Get Data</h2>
       <ng-container *ngFor="let data of dataHome$; trackBy: trackByItem;">
 
-        <div [@showing] class="_flex-center">
+        <div [@showing] class="__flex-center">
           <h1>{{ data?.title }}</h1>
           <p>{{ data?.description }}</p>
 
@@ -23,8 +23,8 @@
 
       </ng-container>
 
-      <button *ngIf="dataUse" (click)="openDialog()" class="_btn-secondary" [@showing]>Open dialog</button>
-      <button *ngIf="!dataUse" (click)="callApi()" class="_btn-secondary">Call Data</button>
+      <button *ngIf="dataUse" (click)="openDialog()" class="__btn-secondary" [@showing]>Open dialog</button>
+      <button *ngIf="!dataUse" (click)="callApi()" class="__btn-secondary">Call Data</button>
 
     </div>
   </section>

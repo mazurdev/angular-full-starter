@@ -7,9 +7,10 @@ body, html {
   font-family: 'Source Sans Pro', sans-serif;
 }
 html {
+  @include customScrollbar(.5em, $overlay);
   height: 100%;
   scroll-behavior: smooth;
-  @include customScrollbar(.5em, $overlay);
+  overflow-x: hidden;
   &.hide-scroll {
     overflow: hidden;
   }
