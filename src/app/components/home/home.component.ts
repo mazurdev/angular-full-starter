@@ -1,17 +1,17 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, Self} from '@angular/core';
 // utils
-import {SeoService} from '../../shared/services/seo.service';
+import {SeoService} from '@shared/services/seo.service';
 import {isPlatformBrowser} from '@angular/common';
-import {showing} from '../../shared/utils/animations';
+import {showing} from '@shared/utils/animations';
 // dialog
 import {MatDialog} from '@angular/material/dialog';
-import {DialogExampleComponent} from '../../shared/dialog/dialog-example/dialog-example.component';
+import {DialogExampleComponent} from '@shared/dialog/dialog-example/dialog-example.component';
 // data
-import {HomeService} from '../../shared/services/data/home.service';
-import {NgOnDestroy} from '../../shared/services/data/ngOnDestroy.service';
+import {HomeService} from '@shared/services/data/home.service';
+import {NgOnDestroy} from '@shared/services/data/ngOnDestroy.service';
 import {takeUntil} from 'rxjs/operators';
 import {HttpErrorResponse} from '@angular/common/http';
-import {HomeInterface} from '../../shared/models/home.interface';
+import {HomeInterface} from '@shared/models/home.interface';
 
 @Component({
   selector: 'nv-home',

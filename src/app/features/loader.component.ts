@@ -1,8 +1,9 @@
 // core
 import {Component} from '@angular/core';
 // utils
-import {LoaderService} from '../shared/services/data/loader.service';
+import {LoaderService} from '@shared/services/data/loader.service';
 import {Subject} from 'rxjs';
+import {VARIABLES} from '@shared/func/variables';
 
 @Component({
   selector: 'nv-loader',
@@ -15,7 +16,7 @@ import {Subject} from 'rxjs';
 })
 export class LoaderComponent {
 
-  color = '#1976d2';
+  color = VARIABLES.COLOR_PRIMARY;
   mode = 'indeterminate';
   value = 50;
   isLoading: Subject<boolean> = this.loaderService.isLoading;

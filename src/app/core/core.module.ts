@@ -6,8 +6,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 // services
 import {CookieService} from 'ngx-cookie-service';
-import {LoaderService} from '../shared/services/data/loader.service';
-import {LoaderInterceptor} from '../shared/utils/loader.iterceptor';
+import {LoaderService} from '@shared/services/data/loader.service';
+import {LoaderInterceptor} from '@shared/utils/loader.iterceptor';
 
 @NgModule({
   imports: [

@@ -1,34 +1,28 @@
-import {trigger, animate, transition, style, query} from '@angular/animations';
+import {transition, trigger, query, style, animate, group} from '@angular/animations';
 
 const easing = '.6s cubic-bezier(1, .26, 0, 1)';
 
-export const routeAnimations = trigger('routeAnimations', [
+export const routeAnimations =
 
-  transition('* => *', [
+  trigger('routeAnimation', [
 
-    query(':enter',
-      [
-        style({opacity: 0})
-      ],
-      {optional: true}
-    ),
+    transition( '* => *', [
 
-    query(':leave',
-      [
-        style({opacity: 1}),
-        animate(`${easing}`, style({opacity: 0}))
-      ],
-      {optional: true}
-    ),
+      // GROUP - базовое состояние
+      group([
 
-    query(':enter',
-      [
-        style({opacity: 0}),
-        animate(`${easing}`, style({opacity: 1}))
-      ],
-      {optional: true}
-    )
+        query(':enter', [
+          style({opacity: 0}),
+          animate(`${easing}`, style({opacity: 1}))
+        ], {optional: true}),
 
-  ])
+        query(':leave', [
+          style({opacity: 1}),
+          animate(`${easing}`, style({opacity: 0}))
+        ], {optional: true})
 
-]);
+      ])
+
+    ])
+
+  ]);

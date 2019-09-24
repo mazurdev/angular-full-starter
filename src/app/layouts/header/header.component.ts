@@ -1,7 +1,7 @@
 // core
 import {Component} from '@angular/core';
 // utils
-
+import {ROUTES} from '@shared/func/routes';
 
 @Component({
   selector: 'nv-header',
@@ -10,10 +10,13 @@ import {Component} from '@angular/core';
 })
 export class HeaderComponent {
 
+  HOME = ROUTES.HOME;
+  LAZY_NESTED = ROUTES.LAZY_NESTED;
+
   nav = [
-    {url: '/lazy/articles', name: 'Home', label: 'Go to Home', exact: true},
-    {url: '/lazy/articles', name: 'About Us', label: 'Go to About', exact: false},
-    {url: '/lazy/articles', name: 'Contact Us', label: 'Go to Contact Us', exact: false}
+    {url: this.LAZY_NESTED, name: 'Home', label: 'Go to Home', exact: true},
+    {url: this.LAZY_NESTED, name: 'About Us', label: 'Go to About', exact: false},
+    {url: this.LAZY_NESTED, name: 'Contact Us', label: 'Go to Contact Us', exact: false}
   ];
   trackByItem(index, item) {
     return (item.id);

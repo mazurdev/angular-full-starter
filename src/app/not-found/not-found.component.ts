@@ -1,7 +1,8 @@
 // core
 import {Component, OnInit} from '@angular/core';
 // utils
-import {NotFoundService} from '../shared/services/not-found.service';
+import {NotFoundService} from '@shared/services/not-found.service';
+import {ROUTES} from '@shared/func/routes';
 
 @Component({
   selector: 'nv-not-found',
@@ -10,6 +11,7 @@ import {NotFoundService} from '../shared/services/not-found.service';
 })
 export class NotFoundComponent implements OnInit {
 
+  HOME = ROUTES.HOME;
   public status: { code: number; message: string };
 
   constructor(

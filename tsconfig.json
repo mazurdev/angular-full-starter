@@ -9,6 +9,12 @@
   ],
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "@shared/*": ["src/app/shared/*"],
+      "@core/*": ["src/app/core/*"],
+      "@layouts/*": ["src/app/layouts/*"],
+      "@features/*": ["src/app/features/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

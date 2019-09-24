@@ -40,6 +40,7 @@
 
 ## Stack
 
+  * Angular Tips & Tricks & Beast Practice
   * PWA (progressive web application)
   * Angular Universal (SSR + Prerender)
   * Maximum SEO

@@ -6,7 +6,7 @@ import {RouterModule} from '@angular/router';
 import {NotFoundRoutingModule} from './not-found-routing.module';
 import {NotFoundComponent} from './not-found.component';
 // utils
-import {NotFoundService} from '../shared/services/not-found.service';
+import {NotFoundService} from '@shared/services/not-found.service';
 
 @NgModule({
   declarations: [

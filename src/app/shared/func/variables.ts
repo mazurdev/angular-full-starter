@@ -1,1 +1,3 @@
-export const delayPreloader = 1400;
+export class VARIABLES {
+  public static readonly COLOR_PRIMARY = '#1976d2';
+}

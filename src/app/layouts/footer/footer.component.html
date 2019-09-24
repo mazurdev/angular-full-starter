@@ -1,24 +1,21 @@
-<footer class="_padding-responsive">
+<footer>
 
-  <div class="_max-width">
-    <div class="footer-content">
-      <img src="../../../assets/icons/icon-128x128.png" alt="Logo Footer" routerLink="/">
-    </div>
-
-    <!---------------------------------------------------------separator-->
-    <div class="separator-wrapper _max-width">
-      <hr class="separator">
-    </div>
-
-    <div class="copyright">
-      <p>Copyright © {{ currentYear }}</p>
-      <div class="privacy-link">
-        <ng-container>
-          <a *ngFor="let link of linksPrivacy; trackBy: trackByItem;" [routerLink]="link.url" [attr.aria-label]="link.label">{{ link.name }}</a>
-        </ng-container>
-      </div>
-    </div>
+  <div class="footer-content">
+    <img src="../../../assets/icons/icon-128x128.png" alt="Logo Footer" [routerLink]="HOME">
   </div>
 
+  <!---------------------------------------------------------separator-->
+  <div class="separator-wrapper">
+    <hr class="separator">
+  </div>
+
+  <div class="copyright">
+    <p>Copyright © {{ currentYear }}</p>
+    <div class="privacy-link">
+      <ng-container>
+        <a *ngFor="let link of linksPrivacy; trackBy: trackByItem;" [routerLink]="link.url" [attr.aria-label]="link.label">{{ link.name }}</a>
+      </ng-container>
+    </div>
+  </div>
 
 </footer>

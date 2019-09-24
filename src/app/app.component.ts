@@ -1,5 +1,5 @@
 // core
-import {ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, Renderer2} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 // utils
 import {routeAnimations} from './shared/utils/route-animation';
@@ -14,16 +14,18 @@ import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'nv-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
   animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
 
   loading: boolean = true;
   isBrowser;
-  cookieValue;
   deviceBrowser = null;
   isMobile = null;
+  // cookie + localStorage
+  cookieConsent: boolean = false;
+  cookieConsentValueLocalStorage;
+  cookieConsentValueCookieStorage;
 
   schema = {
     '@context': 'http://schema.org',
@@ -36,15 +38,20 @@ export class AppComponent implements OnInit {
   };
 
   constructor(
+    // DOM
+    private r: Renderer2,
+    // services
     private cookieService: CookieService,
     private localStorage: LocalStorageService,
+    // utils
     private deviceService: DeviceDetectorService,
     @Inject(PLATFORM_ID) private platformId,
     private cdr: ChangeDetectorRef,
     private toast: MatSnackBar
   ) {
-    this.cookieValue = this.localStorage.get('Cookie-Title');
     this.isBrowser = isPlatformBrowser(platformId);
+    this.cookieConsentValueLocalStorage = this.localStorage.get('Cookie-Consent');
+    this.cookieConsentValueCookieStorage = this.cookieService.check('Cookie-Consent');
   }
 
   ngOnInit() {
@@ -74,20 +81,13 @@ export class AppComponent implements OnInit {
       }
     }
 
-    // isBrowser
-    if (this.isBrowser) {
-
-      setTimeout(() => {
-        // hide preloader
-        this.loading = false;
-        // show scroll
-        this.showScrollWidthNoLoad();
-        // webp images
-        if (this.isMobile && this.deviceBrowser.os === 'iOS') {
-          this.removeWebpClass();
-        }
-      }, delayPreloader);
-
+    // cookie
+    if (this.cookieConsentValueLocalStorage !== 'Allow' && this.cookieConsentValueCookieStorage !== true) {
+      this.cookieConsent = true;
+    }
+    // webp images
+    if (this.isMobile && this.deviceBrowser.os === 'iOS') {
+      this.removeWebpClass();
     }
   }
 
@@ -99,13 +99,10 @@ export class AppComponent implements OnInit {
   }
 
   removeWebpClass() {
-    const $html = document.querySelector('html');
-    $html.classList.remove('webp webp-alpha webp-animation webp-lossless');
-  }
-
-  showScrollWidthNoLoad() {
-    const $html = document.querySelector('html');
-    $html.classList.add('show-scroll');
+    this.r.removeClass(document.querySelector('html'), 'webp');
+    this.r.removeClass(document.querySelector('html'), 'webp-alpha');
+    this.r.removeClass(document.querySelector('html'), 'webp-animation');
+    this.r.removeClass(document.querySelector('html'), 'webp-lossless');
   }
 
   public getRouterOutletState(outlet) {

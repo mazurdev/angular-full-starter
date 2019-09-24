@@ -1,4 +1,4 @@
-@import "utils/variables";
+@import "utils/mixins";
 
 /*----------------------------sticky-header*/
 nv-header {
@@ -30,32 +30,41 @@ a:hover, button:hover {
   text-decoration: none;
 }
 a.active {
+  @include disableCursor;
   transition: all $transition3;
   color: darken($primary, 25%);
   border-bottom: 2px solid $primary;
   &:hover {
     color: darken($primary, 25%);
     border-bottom: 2px solid $primary;
-    cursor: default;
   }
 }
 
 /*----------------------------disable-btn*/
 .btn-disabled {
+  @include disableCursor;
   border: 2px solid $placeholder !important;
-  cursor: auto !important;
   background: $placeholder !important;
   opacity: 0.6;
   color: $white !important;
   &:hover {
-    cursor: auto;
     border: 2px solid $placeholder !important;
     background: $placeholder !important;
     opacity: 0.6;
     color: $white !important;
   }
 }
-
+/*----------------------------cookie*/
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: $black;
+  p {
+    color: $white;
+  }
+}
 /*----------------------------placeholder*/
 ::-webkit-input-placeholder {
   color: $placeholder !important;

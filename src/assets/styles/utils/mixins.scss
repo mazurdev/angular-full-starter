@@ -132,6 +132,13 @@ h6 {@include h6;}
   -o-transition: none !important;
   transition: none !important;
 }
+@mixin disableCursor {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
 @mixin centered($horizontal: true, $vertical: true) {
   position: absolute;
 

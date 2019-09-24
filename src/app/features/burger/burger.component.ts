@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'nv-burger',
@@ -9,16 +9,17 @@ export class BurgerComponent {
 
   openSidenav: boolean = false;
 
-  constructor() {}
+  constructor(
+    private r: Renderer2
+  ) {}
 
   sidenavOpen() {
     this.openSidenav = !this.openSidenav;
-    const mySidenav = document.getElementById('mySidenav') as HTMLElement;
 
     if (this.openSidenav === true) {
-      mySidenav.style.width = '100%';
+      this.r.setStyle(document.querySelector('#mySidenav'), 'width', '100%');
     } else {
-      mySidenav.style.width = '0';
+      this.r.setStyle(document.querySelector('#mySidenav'), 'width', '0');
     }
   }
 
