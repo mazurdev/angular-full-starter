@@ -2,7 +2,7 @@
 
 .page-not-found {
   .bg-page-not-found {
-    @include gradientChanged;
+    background: $black;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -22,7 +22,7 @@
       }
       .back {
         a {
-          @include p;
+          @include p-16;
           color: $primary;
           &:hover {
             color: $primary;

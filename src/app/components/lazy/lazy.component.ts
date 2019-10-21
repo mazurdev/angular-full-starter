@@ -5,9 +5,4 @@ import {Component} from '@angular/core';
   templateUrl: './lazy.component.html',
   styleUrls: ['./lazy.component.scss']
 })
-export class LazyComponent {
-
-  constructor() {
-  }
-
-}
+export class LazyComponent {}

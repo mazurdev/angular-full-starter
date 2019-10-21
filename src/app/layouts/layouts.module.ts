@@ -8,8 +8,6 @@ import {DirectivesModule} from '@shared/directives/directives.module';
 // app
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
-// features
-import {BurgerComponent} from '@features/burger/burger.component';
 
 @NgModule({
   imports: [
@@ -24,9 +22,7 @@ import {BurgerComponent} from '@features/burger/burger.component';
   ],
   declarations: [
     HeaderComponent,
-    FooterComponent,
-    // features
-    BurgerComponent
+    FooterComponent
   ],
 })
 export class LayoutsModule {}

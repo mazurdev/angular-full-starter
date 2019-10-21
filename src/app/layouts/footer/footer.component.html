@@ -1,21 +1,27 @@
-<footer class="__padding-depth">
+<footer>
+  <div class="offset-middle">
 
-  <div class="footer-content">
-    <img src="../../../assets/icons/icon-128x128.png" alt="Logo Footer" [routerLink]="HOME">
-  </div>
-
-  <!---------------------------------------------------------separator-->
-  <div class="separator-wrapper">
-    <hr class="separator">
-  </div>
-
-  <div class="copyright">
-    <p>Copyright © {{ currentYear }}</p>
-    <div class="privacy-link">
-      <ng-container>
-        <a *ngFor="let link of linksPrivacy; trackBy: trackByItem;" [routerLink]="link.url" [attr.aria-label]="link.label">{{ link.name }}</a>
-      </ng-container>
+    <!---------------------------------------------------------content-->
+    <div class="footer-content">
+      <a [routerLink]="HOME" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <img src="../../../assets/icons/icon-128x128.png" [alt]="'Logo Footer | ' + APP_LABEL" [routerLink]="HOME">
+      </a>
     </div>
-  </div>
 
+    <!---------------------------------------------------------separator-->
+    <div class="separator-wrapper">
+      <hr class="separator">
+    </div>
+
+    <!---------------------------------------------------------copyright-->
+    <div class="copyright">
+      <p>Copyright © {{ currentYear }}</p>
+      <div class="privacy-link">
+        <ng-container>
+          <a *ngFor="let link of linksPrivacy; trackBy: trackByItem;" [routerLink]="link.url" [attr.aria-label]="'Go to ' + link.name">{{ link.name }}</a>
+        </ng-container>
+      </div>
+    </div>
+
+  </div>
 </footer>

@@ -2,7 +2,7 @@
 import {Component, OnInit} from '@angular/core';
 // utils
 import {NotFoundService} from '@shared/services/not-found.service';
-import {ROUTES} from '@shared/func/routes';
+import {VARIABLES} from '@shared/helpers/variables';
 
 @Component({
   selector: 'nv-not-found',
@@ -11,7 +11,7 @@ import {ROUTES} from '@shared/func/routes';
 })
 export class NotFoundComponent implements OnInit {
 
-  HOME = ROUTES.HOME;
+  HOME = VARIABLES.HOME;
   public status: { code: number; message: string };
 
   constructor(

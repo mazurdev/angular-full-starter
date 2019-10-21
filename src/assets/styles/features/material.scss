@@ -1,0 +1,17 @@
+@import "../utils/variables";
+
+/*----------------------------snack-bar*/
+.mat-snack-bar-container {
+  color: $black !important;
+  background: $white !important;
+  box-shadow: $box-shadow-white !important;
+}
+.cdk-overlay-dark-backdrop {
+  background: $overlay !important;
+}
+.mat-dialog-container {
+  border-radius: $radius-btn !important;
+}
+.mat-progress-spinner.mat-progress-spinner-indeterminate-animation[mode=indeterminate] circle {
+  stroke-width: 4% !important;
+}

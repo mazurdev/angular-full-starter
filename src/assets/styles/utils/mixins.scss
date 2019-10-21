@@ -2,7 +2,7 @@
 @import "~rfs/scss";
 
 //---------------------------------------custom scrollbar
-@mixin customScrollbar($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+@mixin customScrollbar($size, $foreground-color, $background-color: $white) {
 
   // For Google Chrome
   ::-webkit-scrollbar {
@@ -37,68 +37,36 @@
 
 //---------------------------------------heading
 @mixin h1 {
-  @include rfs(64);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
+  @include rfs(64px);
+  font-family: $font-family;
 }
 @mixin h2 {
-  @include rfs(48);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
+  @include rfs(48px);
+  font-family: $font-family;
 }
 @mixin h3 {
-  @include rfs(36);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
+  @include rfs(36px);
+  font-family: $font-family;
 }
 @mixin h4 {
-  @include rfs(24);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
+  @include rfs(24px);
+  font-family: $font-family;
 }
 @mixin h5 {
-  @include rfs(18);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
+  @include rfs(18px);
+  font-family: $font-family;
 }
 @mixin h6 {
-  @include rfs(14);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
+  @include rfs(14px);
+  font-family: $font-family;
 }
-@mixin p {
-  @include rfs(24);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
+@mixin p-18 {
+  @include rfs(18px);
+  font-family: $font-family;
 }
-@mixin caption {
-  @include rfs(16);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-}
-@mixin subtext {
-  @include rfs(16);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-transform: uppercase;
+@mixin p-16 {
+  @include rfs(16px);
+  font-family: $font-family;
 }
 //---------------------------------------include mixins to heading tags
 h1 {@include h1;}
@@ -107,23 +75,7 @@ h3 {@include h3;}
 h4 {@include h4;}
 h5 {@include h5;}
 h6 {@include h6;}
-//---------------------------------------links
-@mixin linksHeader {
-  @include rfs(18);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-transform: capitalize;
-}
-@mixin linksFooter {
-  @include rfs(14);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-transform: capitalize;
-}
+
 //---------------------------------------others
 @mixin disableAnim {
   -webkit-transition: none !important;
@@ -139,36 +91,8 @@ h6 {@include h6;}
   user-select: none;
   pointer-events: none;
 }
-@mixin centered($horizontal: true, $vertical: true) {
-  position: absolute;
-
-  @if ($horizontal and $vertical) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-  } @else if ($horizontal) {
-    left: 50%;
-    transform: translate(-50%, 0);
-
-  } @else if ($vertical) {
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-}
-
-@mixin arrowDown($size, $color) {
-  width: 0;
-  height: 0;
-  border-left: $size solid transparent;
-  border-right: $size solid transparent;
-  border-top: $size solid $color;
-}
-//---------------------------------------bg
-@mixin gradientChanged {
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-  background-size: 400% 400%;
-  -webkit-animation: gradientChanged 15s ease infinite;
-  -moz-animation: gradientChanged 15s ease infinite;
-  animation: gradientChanged 15s ease infinite;
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

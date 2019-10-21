@@ -2,6 +2,15 @@
 $desktop: 1680px;
 $tablet: 768px;
 $mobile: 480px;
+//-------------------------fonts
+$font-family: 'Source Sans Pro', sans-serif;
+$letter-spacing: 0.5px;
+//-------------------------offsets
+$offsetMin: 6.5%;
+$offsetMiddle: 13%;
+
+$offsetTB_big: 150px;
+$offsetTB_min: 30px;
 //-------------------------black/white
 $white: #ffffff;
 $black: #000000;
@@ -14,12 +23,13 @@ $border: #EEEEEE;
 $primary: #1976d2;
 $gradient-black: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
 //-------------------------shadows
-$box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 $box-shadow-inset: inset 0 0 6px rgba(0,0,0,0.3);
+$box-shadow-white:0 6px 30px rgba(79, 79, 79, 0.1);
+$box-shadow-black: 5px 20px 30px rgba(0, 0, 0, 0.1);
 $overlay: rgba(0,0,0,.32);
 //-------------------------radius
 $radius-scroll: 10px;
-$radius-btn: 4px;
+$radius-btn: 6px;
 //-------------------------animations
 $easing: cubic-bezier(.55,.085,.68,.53);
 $transition3: .3s $easing;

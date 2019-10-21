@@ -1,7 +1,7 @@
 // core
 import {Component} from '@angular/core';
 // utils
-import {ROUTES} from '@shared/func/routes';
+import {VARIABLES} from '@shared/helpers/variables';
 
 @Component({
   selector: 'nv-footer',
@@ -10,21 +10,21 @@ import {ROUTES} from '@shared/func/routes';
 })
 export class FooterComponent {
 
+  APP_LABEL = VARIABLES.APP_LABEL;
   // routes
-  HOME = ROUTES.HOME;
-  LAZY_NESTED = ROUTES.LAZY_NESTED;
+  HOME = VARIABLES.HOME;
+  LAZY_NESTED = VARIABLES.LAZY_NESTED;
 
   currentYear: number = new Date().getFullYear();
 
   linksPrivacy = [
-    {url: this.LAZY_NESTED, name: 'Terms Of Use', label: 'Go to Terms Of Use'},
-    {url: this.LAZY_NESTED, name: 'Privacy Policy', label: 'Go to Privacy Policy'},
-    {url: this.LAZY_NESTED, name: 'Cookie Policy', label: 'Go to Cookie Policy'}
+    {url: this.LAZY_NESTED, name: 'Terms Of Use'},
+    {url: this.LAZY_NESTED, name: 'Privacy Policy'},
+    {url: this.LAZY_NESTED, name: 'Cookie Policy'}
   ];
+
   trackByItem(index, item) {
     return (item.id);
   }
-
-  constructor() {}
 
 }

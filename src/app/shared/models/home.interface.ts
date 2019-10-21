@@ -1,3 +1,7 @@
+export interface DialogExampleData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
+
 export interface ItemsInterface {
   id: number;
   itemTitle: string;

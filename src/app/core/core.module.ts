@@ -5,16 +5,17 @@ import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 // services
-import {CookieService} from 'ngx-cookie-service';
 import {LoaderService} from '@shared/services/data/loader.service';
 import {LoaderInterceptor} from '@shared/utils/loader.iterceptor';
 import {CustomPreloadStrategy} from '@shared/utils/customPreloadStrategy';
+import {DataService} from '@shared/services/data/data.service';
+import {MediaService} from '@shared/services/media.service';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
-  ],
+  ]
 })
 export class CoreModule {
   constructor(
@@ -29,8 +30,9 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         CustomPreloadStrategy,
-        CookieService,
         LoaderService,
+        DataService,
+        MediaService,
         {
           provide: APP_BASE_HREF,
           useValue: environment.baseUrl

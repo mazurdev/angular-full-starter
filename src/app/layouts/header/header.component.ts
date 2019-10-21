@@ -1,7 +1,8 @@
 // core
 import {Component} from '@angular/core';
 // utils
-import {ROUTES} from '@shared/func/routes';
+import {VARIABLES} from '@shared/helpers/variables';
+import {ViewportScroller} from '@angular/common';
 
 @Component({
   selector: 'nv-header',
@@ -10,20 +11,27 @@ import {ROUTES} from '@shared/func/routes';
 })
 export class HeaderComponent {
 
-  HOME = ROUTES.HOME;
-  LAZY_NESTED = ROUTES.LAZY_NESTED;
+  APP_LABEL = VARIABLES.APP_LABEL;
+  HOME = VARIABLES.HOME;
+  LAZY_NESTED = VARIABLES.LAZY_NESTED;
 
   nav = [
-    {url: this.LAZY_NESTED, name: 'Home', label: 'Go to Home', exact: true},
-    {url: this.LAZY_NESTED, name: 'About Us', label: 'Go to About', exact: false},
-    {url: this.LAZY_NESTED, name: 'Contact Us', label: 'Go to Contact Us', exact: false}
+    {url: this.LAZY_NESTED, name: 'Home', exact: true},
+    {url: this.LAZY_NESTED, name: 'About Us', exact: false},
+    {url: this.LAZY_NESTED, name: 'Contact Us', exact: false},
+    {name: 'Go to second section', scrollToEl: 'SecondSection'}
   ];
-  trackByItem(index, item) {
-    return (item.id);
-  }
 
   constructor(
-  ) {
+    private vps: ViewportScroller
+  ) {}
+
+  scrollToElement($element): void {
+    this.vps.scrollToAnchor($element);
+  }
+
+  trackByItem(index, item) {
+    return (item.id);
   }
 
 }

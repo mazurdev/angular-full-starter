@@ -201,25 +201,3 @@ RewriteRule \.(jpe?g|png|gif|bmp)$ - [NC,F,L]
 # Если вы захотите отображать вместо заблокированного изображения свой баннер,
 # то замените правило выше на это:
 # RewriteRule \.(jpe?g|png|gif|bmp) http://example.com/blocked.png [R,L]
-
-##################################################################### Hide for User Agents
-SetEnvIfNoCase user-Agent ^FrontPage [NC,OR]
-SetEnvIfNoCase user-Agent ^Java.* [NC,OR]
-SetEnvIfNoCase user-Agent ^Microsoft.URL [NC,OR]
-SetEnvIfNoCase user-Agent ^MSFrontPage [NC,OR]
-SetEnvIfNoCase user-Agent ^Offline.Explorer [NC,OR]
-SetEnvIfNoCase user-Agent ^[Ww]eb[Bb]andit [NC,OR]
-SetEnvIfNoCase user-Agent ^Zeus [NC]
-<limit get=”” post=”” head=””>
-Order Allow,Deny
-Allow from all
-Deny from env=bad_bot
-</limit>
-
-##################################################################### Secure from scripts injections
-Options +FollowSymLinks
-RewriteEngine On
-RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
-RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
-RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
-RewriteRule ^(.*)$ index.php [F,L]

@@ -15,17 +15,16 @@ import {SharedModule} from '@shared/shared.module';
 import {HomeComponent} from '@components/home/home.component';
 import {LayoutsModule} from '@layouts/layouts.module';
 // features
-import {DialogExampleComponent} from '@shared/dialog/dialog-example/dialog-example.component';
-import {LoaderComponent} from '@features/loader.component';
+import {LoaderComponent} from '@features/loader/loader.component';
+import {DialogExampleComponent} from '@features/dialog/dialog-example/dialog-example.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    // dialog
-    DialogExampleComponent,
     // features
-    LoaderComponent
+    LoaderComponent,
+    DialogExampleComponent
   ],
   imports: [
     // core

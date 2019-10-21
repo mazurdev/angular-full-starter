@@ -1,44 +1,25 @@
-<header class="__padding-depth">
-  <nav role="navigation">
-
-    <div class="logo-wrapper">
-      <img src="../../../assets/icons/icon-128x128.png" alt="Logo" [routerLink]="HOME">
-    </div>
-
-    <div class="links-wrapper">
-
-      <ul>
-        <ng-container>
-          <li *ngFor="let link of nav; trackBy: trackByItem;">
-            <a [routerLink]="[link.url]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: link.exact }" [attr.aria-label]="link.label">{{ link.name }}</a>
-          </li>
-        </ng-container>
-      </ul>
-
-    </div>
-
-    <!-------------------------------------sidenav-->
-
-    <div class="sidenav-wrapper">
-
-      <div class="logo-wrapper-sidenav">
-        <img src="../../../assets/icons/icon-72x72.png" alt="Logo Sidenav" [routerLink]="HOME">
+<header>
+  <div class="offset-middle">
+    <nav role="navigation">
+      <!---------------------------------------------------------logo-wrapper-->
+      <div class="logo-wrapper">
+        <a [routerLink]="HOME" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <img src="../../../assets/icons/icon-128x128.png" [alt]="'Logo Footer | ' + APP_LABEL" alt="Logo">
+        </a>
       </div>
 
-      <nv-burger></nv-burger>
+      <!---------------------------------------------------------links-wrapper-->
+      <div class="links-wrapper">
+        <ul>
+          <ng-container>
+            <li *ngFor="let link of nav; trackBy: trackByItem;">
+              <a *ngIf="!link.scrollToEl" [routerLink]="[link.url]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: link.exact }" [attr.aria-label]="'Go to ' + link.name">{{ link.name }}</a>
+              <a *ngIf="link.scrollToEl" [attr.aria-label]="'Go to ' + link.name" (click)="scrollToElement(link.scrollToEl)">{{ link.name }}</a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
 
-    </div>
-
-    <div id="mySidenav" class="sidenav">
-      <ul class="__flex-center">
-        <ng-container>
-          <li *ngFor="let link of nav; trackBy: trackByItem;">
-            <a [routerLink]="[link.url]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: link.exact }" [attr.aria-label]="link.label">{{ link.name }}</a>
-          </li>
-        </ng-container>
-      </ul>
-
-    </div>
-
-  </nav>
+    </nav>
+  </div>
 </header>

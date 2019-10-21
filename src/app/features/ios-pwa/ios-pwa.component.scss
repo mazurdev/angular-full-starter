@@ -1,0 +1,56 @@
+@import "../../../assets/styles/utils/mixins";
+
+:host {
+
+  .content {
+    margin: 0.5em;
+    text-align: center;
+    .top {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        @include p-16;
+        color: $black;
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .full-width {
+    margin-top: 1em;
+    width: 100%;
+    text-align: center;
+    ::ng-deep fa-icon {
+      position: relative;
+      svg {
+        font-size: 14px;
+        path {
+          stroke: $primary;
+          fill: $primary;
+        }
+      }
+    }
+  }
+  .btn-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background: transparent;
+    ::ng-deep fa-icon {
+      svg {
+        font-size: 14px;
+        path {
+          stroke: $black;
+          fill: $black;
+        }
+      }
+    }
+  }
+
+}

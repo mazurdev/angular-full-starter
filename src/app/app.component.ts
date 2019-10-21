@@ -3,27 +3,37 @@ import {ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID, Renderer2} fr
 import {isPlatformBrowser} from '@angular/common';
 // utils
 import {routeAnimations} from '@shared/utils/route-animation';
-import {CookieService} from 'ngx-cookie-service';
 import {LocalStorageService} from '@shared/services/local-storage.service';
 import {DeviceDetectorService} from 'ngx-device-detector';
-// IOS PWA
-import {IosPWAComponent} from '@shared/ios-pwa/ios-pwa.component';
 import {MatSnackBar} from '@angular/material';
+declare var AOS: any;
+import {VARIABLES} from '@shared/helpers/variables';
+import {ICONS} from '@shared/helpers/icons';
+import {IosPWAComponent} from '@features/ios-pwa/ios-pwa.component';
 
 @Component({
   selector: 'nv-root',
   templateUrl: './app.component.html',
+  styles: [`
+    ::ng-deep router-outlet ~ * {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+  `],
   animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
 
+  // icons
+  iconCookie = ICONS.iconCookie;
+
   isBrowser;
   deviceBrowser = null;
   isMobile = null;
-  // cookie + localStorage
-  cookieConsent: boolean = false;
+  // localStorage
+  cookieConsent = false;
   cookieConsentValueLocalStorage;
-  cookieConsentValueCookieStorage;
 
   schema = {
     '@context': 'http://schema.org',
@@ -39,7 +49,6 @@ export class AppComponent implements OnInit {
     // DOM
     private r: Renderer2,
     // services
-    private cookieService: CookieService,
     private localStorage: LocalStorageService,
     // utils
     private deviceService: DeviceDetectorService,
@@ -49,7 +58,6 @@ export class AppComponent implements OnInit {
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.cookieConsentValueLocalStorage = this.localStorage.get('Cookie-Consent');
-    this.cookieConsentValueCookieStorage = this.cookieService.check('Cookie-Consent');
   }
 
   ngOnInit() {
@@ -79,14 +87,29 @@ export class AppComponent implements OnInit {
       }
     }
 
-    // cookie
-    if (this.cookieConsentValueLocalStorage !== 'Allow' && this.cookieConsentValueCookieStorage !== true) {
+    // AOS animations
+    AOS.init({
+      disable: 'mobile',
+      once: true,
+      useClassNames: true,
+      delay: 50,
+      duration: VARIABLES.ANIM_DURATION,
+      easing: 'ease-in-out'
+    });
+
+    // localStorage
+    if (this.cookieConsentValueLocalStorage !== 'Allow') {
       this.cookieConsent = true;
     }
     // webp images
     if (this.isMobile && this.deviceBrowser.os === 'iOS') {
       this.removeWebpClass();
     }
+  }
+
+  allowCookies() {
+    this.localStorage.set('Cookie-Consent', 'Allow');
+    this.r.addClass(document.querySelector('.cookie-consent'), 'hide');
   }
 
   getSafariDevice() {

@@ -2,23 +2,20 @@
 
 .page-home {
 
-  //--------------------------------------------- main
-  h1 {
-    @include h1;
-    font-weight: bold;
-  }
-  p {
-    @include p;
-  }
-  h1, p {
-    margin-bottom: 20px;
-  }
-  //--------------------------------------------- section 1
+  //----------------------------------------------section-1
   .section-1 {
+    @include flex-center;
+    margin-top: $offsetTB_big;
+    margin-bottom: $offsetTB_big;
     height: 100vh;
-    align-items: center;
     flex-direction: column;
-    .wrapper {
+    h1 {
+      color: $black;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .wrap {
       align-items: center;
       flex-direction: column;
       & > div {
@@ -28,17 +25,30 @@
       p {
         max-width: 500px;
         text-align: center;
+        margin-bottom: 20px;
+        color: $black;
       }
       ul {
         li {
-          @include caption;
+          color: $black;
+          @include p-18;
         }
       }
       button {
-        margin-top: 20px;
+        width: 100%;
+        margin: 0 auto;
       }
     }
 
+  }
+
+  #SecondSection {
+    @include flex-center;
+    height: 100vh;
+    background: $gradient-black;
+    h2 {
+      color: $white;
+    }
   }
 
 }

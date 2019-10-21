@@ -14,7 +14,8 @@
       "@core/*": ["src/app/core/*"],
       "@layouts/*": ["src/app/layouts/*"],
       "@features/*": ["src/app/features/*"],
-      "@components/*": ["src/app/components/*"]
+      "@components/*": ["src/app/components/*"],
+      "@models/*": ["src/app/shared/models/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

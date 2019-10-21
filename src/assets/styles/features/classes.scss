@@ -1,0 +1,26 @@
+@import "../utils/variables";
+
+/*-------------------------------------------------offsets*/
+.offset-min {
+  padding-left: $offsetMin;
+  padding-right: $offsetMin;
+}
+.offset-middle {
+  padding-left: $offsetMiddle;
+  padding-right: $offsetMiddle;
+}
+
+/*-------------------------------------------------buttons*/
+.__btn-primary {
+  border-radius: $radius-btn;
+  padding: 15px 40px;
+  color: $black;
+  text-decoration: none;
+  background: $white;
+  border: 2px solid $primary;
+  &:hover {
+    transition: $transition3;
+    color: $white;
+    background: $primary;
+  }
+}

@@ -1,5 +1,6 @@
-@import "assets/styles/preloader";
-@import "assets/styles/normalize.css";
-@import "assets/styles/checkbox.css";
+// libs
+@import "~normalize.css/normalize.css";
+@import "~aos/dist/aos.css";
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+// main
 @import "assets/styles/main";

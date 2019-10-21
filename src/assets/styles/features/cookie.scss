@@ -1,0 +1,55 @@
+@import "../utils/mixins";
+
+.cookie-consent {
+  padding: 15px 0 15px 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: $white;
+  box-shadow: $box-shadow-white;
+  &.hide {
+    display: none;
+  }
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    &.description {
+      margin-left: 15px;
+      fa-icon {
+        margin-right: 10px;
+        svg {
+          path {
+            fill: $primary;
+            stroke: $primary;
+          }
+        }
+      }
+      p {
+        @include p-16;
+        color: $black;
+        a {
+          color: $primary;
+          transition: color $transition3;
+          font-weight: bold;
+          &:hover {
+            color: rgba($primary, 0.7);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    &.allow {
+      margin-right: 15px;
+      button {
+        min-width: 105px;
+        min-height: 45px;
+      }
+    }
+  }
+}

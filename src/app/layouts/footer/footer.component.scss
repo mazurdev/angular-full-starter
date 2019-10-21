@@ -2,7 +2,10 @@
 
 footer {
   background-color: $black;
-  padding: 70px 0 0;
+  padding-top: $offsetTB_min;
+  padding-bottom: $offsetTB_min;
+
+  //----------------------------------------------content
   .footer-content {
     display: flex;
     justify-content: space-between;
@@ -20,26 +23,27 @@ footer {
     width: 100%;
   }
 
+  //----------------------------------------------copyright
   .copyright {
     display: flex;
     justify-content: space-between;
     padding: 50px 0;
     p {
-      @include linksFooter;
+      @include p-16;
       color: $white;
     }
     .privacy-link {
       a {
-        @include linksFooter;
+        @include p-16;
         color: $white;
         transition: color $transition3;
+        text-decoration: none;
         &:not(:last-child) {
           margin-right: 10px;
         }
-      }
-      a:hover {
-        cursor: pointer;
-        color: $primary;
+        &:hover {
+          color: $primary;
+        }
       }
     }
 
