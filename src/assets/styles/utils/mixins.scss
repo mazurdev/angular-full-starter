@@ -96,3 +96,11 @@ h6 {@include h6;}
   justify-content: center;
   align-items: center;
 }
+@mixin nthChildOffset($mr, $mb, $offsetR, $offsetB) {
+  &:not(:nth-child(#{$offsetR+1}n)) {
+    margin-right: $mr;
+  }
+  &:not(:nth-last-child(-n+#{$offsetB})) {
+    margin-bottom: $mb;
+  }
+}
