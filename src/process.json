@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "angular-http",
+      "cwd": "/home/mazurdev/angular-full-starter/browser",
+      "args": "-p 8080 -d false",
+      "script": "/home/mazurdev/.nvm/versions/node/v10.17.0/bin/http-server"
+    },
+    {
+      "name": "angular-ssr",
+      "cwd": "/home/mazurdev/angular-full-starter",
+      "script": "/home/mazurdev/angular-full-starter/server.js"
+    }
+  ]
+}

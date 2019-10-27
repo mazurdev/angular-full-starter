@@ -88,14 +88,16 @@ export class AppComponent implements OnInit {
     }
 
     // AOS animations
-    AOS.init({
-      disable: 'mobile',
-      once: true,
-      useClassNames: true,
-      delay: 50,
-      duration: VARIABLES.ANIM_DURATION,
-      easing: 'ease-in-out'
-    });
+    if (this.isBrowser) {
+      AOS.init({
+        disable: 'mobile',
+        once: true,
+        useClassNames: true,
+        delay: 50,
+        duration: VARIABLES.ANIM_DURATION,
+        easing: 'ease-in-out'
+      });
+    }
 
     // localStorage
     if (this.cookieConsentValueLocalStorage !== 'Allow') {
