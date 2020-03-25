@@ -1,6 +1,6 @@
 {
   "name": "angular-full-starter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Angular starter, which combines all the necessary components for writing a complete project",
   "keywords": [
     "Angular",
@@ -34,7 +34,7 @@
     "build:prod": "node minifier-json.js && ng build --prod --stats-json",
     "build:prod-staging": "node minifier-json.js && ng build --prod --stats-json --configuration staging",
     "analyze:bundle": "webpack-bundle-analyzer dist/client/stats-es2015.json",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
+    "postinstall": "ngcc"
   },
   "dependencies": {
     "@angular/animations": "^9.0.7",

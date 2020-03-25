@@ -1,9 +1,9 @@
 // core
 import {Component} from '@angular/core';
 // utils
-import {MatSnackBarRef} from '@angular/material';
 import {ICONS} from '@shared/helpers/icons';
 import {VARIABLES} from '@shared/helpers/variables';
+import {MatSnackBarRef} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'fs-ios-pwa',

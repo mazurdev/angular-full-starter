@@ -36,12 +36,7 @@ a:hover, button:hover {
 }
 a.active {
   @include disableCursor;
-  transition: all $transition3;
-  color: darken($primary, 25%);
-  &:hover {
-    color: darken($primary, 25%);
-    border-bottom: 2px solid $primary;
-  }
+  color: $black !important;
 }
 // form
 input {

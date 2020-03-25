@@ -17,7 +17,7 @@ export class HeaderComponent {
   LAZY_NESTED = ROUTES.LAZY_NESTED;
 
   nav = [
-    {url: this.LAZY_NESTED, name: 'Home', exact: true},
+    {url: this.HOME, name: 'Home', exact: true},
     {url: this.LAZY_NESTED, name: 'Lazy Nested', exact: false},
     {name: 'Go to second section', scrollToEl: 'SecondSection'}
   ];

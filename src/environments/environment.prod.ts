@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://206.54.190.168',
-  apiUrl: 'http://206.54.190.168/assets/db/'
+  baseUrl: 'http://127.0.0.1:8080',
+  apiUrl: 'http://127.0.0.1:8080/assets/db/'
 };

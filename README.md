@@ -51,19 +51,22 @@
 
 #### Development
   * `npm run start` - starts a dev server and opens browser with running app
-  * `npm run server:ssr` - dev server (SSR) 
-  * `npm run serve:prerender` - dev server (PRERENDER)
+  * `npm run serve:dist` - open project using http-server
+  * `npm run serve:ssr` - start Server Side Rendering
+  * `npm run serve:ssr-debugg` - debug Server Side Rendering
+  * `npm run serve:ssr-staging-debugg` - debug Server Side Rendering (Staging environment)
  
 #### Build
-  * `npm run build` - development build
   * `npm run build:prod` - production build 
-  * `npm run build:ssr` - production build (SSR) 
-  * `npm run build:prerender` - production build (PRERENDER)
+  * `npm run build:prod-staging` - production build (Staging environment)
+  * `npm run build:ssr` - production build with SSR 
+  * `npm run build:ssr-staging` - production build with SSR (Staging environment)
+  * `npm run build:prerender` - production build with Prerender
+  * `npm run build:prerender-staging` - production build with Prerender (Staging environment)
 
 #### Others
-  * `npm run build:stats` - generate webpack-bundle application
-  * `npm run analyze` - analyze webpack-bundle application
-  * `npm run check:https` - open the application by https
+  * `npm run analyze:bundle` - analyze bundle application using webpack-bundle-analyzer
+  * `npm run postinstall` - run ngcc compile libraries
 
 ## Features
 
@@ -72,22 +75,12 @@
   * custom preloadStrategy
   * maximum responsive mixins
   * use `SharedModule` and `CoreModule`
-  * present `base application URL`: "environment.ts" and "environment.prod.ts"
+  * present `base application URL`: "environment.ts", "environment.staging.ts" and "environment.prod.ts"
   * present modalComponent
   * present PWA for iOS
   * present `errorHandler`
   * present `seoService`
   * present `404` not-found page
-
-## Add Universal + PWA (Addition)
-
-```bash
-npm i @ng-toolkit/universal
-npm i @ng-toolkit/pwa
-ng add ng-toolkit/universal
-ng add @angular/pwa
-ng add @ng-toolkit/pwa
-```
 
 ## Update packages
 
@@ -97,7 +90,6 @@ ng update @angular/cli @angular/core
 ng update @angular/material
 ng update @nguniversal/common @nguniversal/express-engine @nguniversal/module-map-ngfactory-loader
 ng update @ng-toolkit/universal @ng-toolkit/pwa @angular/pwa
-ng update @ngrx/core @ngrx/effects @ngrx/router-store @ngrx/store @ngrx/store-devtools
 ```
 > If need - update "material" (ng update @angular/material)
 

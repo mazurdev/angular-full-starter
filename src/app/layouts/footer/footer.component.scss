@@ -5,34 +5,17 @@ footer {
   padding-top: $offsetTB_min;
   padding-bottom: $offsetTB_min;
 
-  //----------------------------------------------content
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 50px;
-    img:hover {
-      cursor: pointer;
-    }
-  }
-
-  //----------------------------------------------separator
-  hr.separator {
-    background: $border;
-    // height: 1px;
-    width: 100%;
-  }
-
   //----------------------------------------------copyright
   .copyright {
     display: flex;
     justify-content: space-between;
-    padding: 50px 0;
     p {
       @include p-16;
       color: $white;
     }
     .privacy-link {
+      display: flex;
+      align-items: center;
       a {
         @include p-16;
         color: $white;

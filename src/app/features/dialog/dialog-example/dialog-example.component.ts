@@ -1,8 +1,8 @@
 // core
 import {Component, Inject} from '@angular/core';
 // utils
-import {MAT_DIALOG_DATA} from '@angular/material';
 import {DialogExampleData} from '@models/home.interface';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'fs-dialog-example',
