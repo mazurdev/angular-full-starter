@@ -1,8 +1,7 @@
 import {enableProdMode} from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-
-import {environment} from './environments/environment';
-import {AppBrowserModule} from './app/app.browser.module';
+import {environment} from '@environments/environment';
+import {AppModule} from './app/app.module';
 
 if (environment.production) {
   // Remove console logs in production
@@ -11,6 +10,5 @@ if (environment.production) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  platformBrowserDynamic().bootstrapModule(AppBrowserModule)
-    .catch(err => console.error(err));
-});
+  platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.error(err));
+}, {passive: true});

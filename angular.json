@@ -31,14 +31,14 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "nv",
+      "prefix": "fs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/browser",
+            "outputPath": "dist/client",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "main": "src/main.browser.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -46,14 +46,16 @@
               "src/robots.txt",
               "src/sitemap.xml",
               "src/.htaccess",
+              "src/browserconfig.xml",
+              "src/manifest.json",
+              "src/process.json",
+              "src/assets/db",
+              "src/assets/db-source",
               "src/assets/img",
               "src/assets/splashscreens",
               "src/assets/config",
               "src/assets/icons",
-              "src/assets/js",
-              "src/assets/db",
-              "src/manifest.json",
-              "src/process.json"
+              "src/assets/js"
             ],
             "styles": [
               "src/styles.scss"
@@ -84,6 +86,41 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ],
               "serviceWorker": true,
@@ -155,8 +192,13 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles.scss"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -165,7 +207,60 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ]
+              ],
+              "bundleDependencies": true,
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "bundleDependencies": true,
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "angular-full-starter:build",
+            "serverTarget": "angular-full-starter:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-full-starter:build:production",
+              "serverTarget": "angular-full-starter:server:production"
+            },
+            "staging": {
+              "browserTarget": "angular-full-starter:build:staging",
+              "serverTarget": "angular-full-starter:server:staging"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": []
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-full-starter:build:production",
+              "serverTarget": "angular-full-starter:server:production"
+            },
+            "staging": {
+              "browserTarget": "angular-full-starter:build:staging",
+              "serverTarget": "angular-full-starter:server:staging"
             }
           }
         }

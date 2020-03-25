@@ -1,14 +1,14 @@
-<div [@routeAnimations]="getRouterOutletState(o)">
+<div [@routeAnimation]="getRouterOutletState(o)">
   <router-outlet #o="outlet"></router-outlet>
 </div>
 
-<nv-loader></nv-loader>
+<fs-loader></fs-loader>
 
 <div class="cookie-consent" *ngIf="cookieConsent">
   <div class="wrap">
     <div class="item description">
       <fa-icon [icon]="iconCookie" size="lg"></fa-icon>
-      <p>Using our website you confirm that you got introduced to our Privacy Policy and</p>
+      <p>Using our website you confirm that you got introduced to our Privacy Policy</p>
     </div>
     <div class="item allow">
       <button type="button" aria-label="Allow Cookie" (click)="allowCookies()" class="__btn_primary">Go It!</button>

@@ -2,9 +2,10 @@
 import {Component} from '@angular/core';
 // utils
 import {VARIABLES} from '@shared/helpers/variables';
+import {ROUTES} from '@shared/helpers/routes';
 
 @Component({
-  selector: 'nv-footer',
+  selector: 'fs-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
@@ -12,8 +13,8 @@ export class FooterComponent {
 
   APP_LABEL = VARIABLES.APP_LABEL;
   // routes
-  HOME = VARIABLES.HOME;
-  LAZY_NESTED = VARIABLES.LAZY_NESTED;
+  HOME = ROUTES.HOME;
+  LAZY_NESTED = ROUTES.LAZY_NESTED;
 
   currentYear: number = new Date().getFullYear();
 

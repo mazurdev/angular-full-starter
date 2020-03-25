@@ -1,5 +1,5 @@
 // core
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -8,21 +8,25 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // universal
 import {TransferHttpCacheModule} from '@nguniversal/common';
 import {NgtUniversalModule} from '@ng-toolkit/universal';
-// utils
+// core & shared
 import {CoreModule} from '@core/core.module';
 import {SharedModule} from '@shared/shared.module';
 // app
 import {HomeComponent} from '@components/home/home.component';
+import {IosPWAComponent} from '@features/ios-pwa/ios-pwa.component';
+// utils
 import {LayoutsModule} from '@layouts/layouts.module';
-// features
 import {LoaderComponent} from '@features/loader/loader.component';
 import {DialogExampleComponent} from '@features/dialog/dialog-example/dialog-example.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '@environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     // features
+    IosPWAComponent,
     LoaderComponent,
     DialogExampleComponent
   ],
@@ -30,19 +34,20 @@ import {DialogExampleComponent} from '@features/dialog/dialog-example/dialog-exa
     // core
     BrowserModule,
     BrowserAnimationsModule,
-    // utils
-    SharedModule,
-    CoreModule.forRoot(),
     CommonModule,
+    BrowserTransferStateModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
+    // utils
     LayoutsModule,
     // universal
     TransferHttpCacheModule,
     NgtUniversalModule,
+    // core & shared
+    SharedModule,
+    CoreModule.forRoot(),
     // app
     AppRoutingModule
-  ],
-  entryComponents: [
-    DialogExampleComponent
   ],
   bootstrap: [AppComponent]
 })

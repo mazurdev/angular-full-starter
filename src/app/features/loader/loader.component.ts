@@ -6,7 +6,7 @@ import {VARIABLES} from '@shared/helpers/variables';
 import {LoaderService} from '@shared/services/data/loader.service';
 
 @Component({
-  selector: 'nv-loader',
+  selector: 'fs-loader',
   template: `
     <div *ngIf="isLoading | async" class="overlay">
       <mat-progress-spinner class="spinner" [color]="color" [mode]="mode" [value]="value" aria-label="Progress"></mat-progress-spinner>

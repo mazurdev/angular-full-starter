@@ -15,7 +15,8 @@
       "@layouts/*": ["src/app/layouts/*"],
       "@features/*": ["src/app/features/*"],
       "@components/*": ["src/app/components/*"],
-      "@models/*": ["src/app/shared/models/*"]
+      "@models/*": ["src/app/shared/models/*"],
+      "@environments/*": ["src/environments/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -44,6 +45,8 @@
     "_addition"
   ],
   "angularCompilerOptions": {
-    "preserveWhitespaces": false
+    "preserveWhitespaces": false,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

@@ -36,16 +36,16 @@ import 'core-js/es/map';
 import 'core-js/es/set';
 import 'core-js/es/array';
 import 'classlist.js'; // Run `npm install --save classlist.js`.
-// import 'web-animations-js'; // Run `npm install --save web-animations-js`.
+import 'web-animations-js'; // Run `npm install --save web-animations-js`.
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
-// (window as any).global = window;
-// (window as any).process = window;
-// (window as any).process.browser = true;
-// (window as any).process.version = '';
-// (window as any).process.versions = {node: false};
+(window as any).global = window;
+(window as any).process = window;
+(window as any).process.browser = true;
+(window as any).process.version = '';
+(window as any).process.versions = {node: false};
 // declare var global: any;
 // global.Buffer = global.Buffer || require('buffer').Buffer;

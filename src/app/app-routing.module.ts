@@ -1,9 +1,9 @@
 // core
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {CustomPreloadStrategy} from '@shared/utils/customPreloadStrategy';
 // app
 import {HomeComponent} from '@components/home/home.component';
+import {CustomPreloadStrategy} from '@shared/helpers/customPreloadStrategy';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
     loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule),
     data: {animation: 'Not found'}
   },
-  {path: '**', redirectTo: '/404', pathMatch: 'full'}
+  {path: '**', redirectTo: '404', pathMatch: 'full'}
 ];
 
 @NgModule({

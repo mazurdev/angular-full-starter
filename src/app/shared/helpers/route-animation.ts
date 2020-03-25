@@ -1,14 +1,15 @@
 import {transition, trigger, query, style, animate, group} from '@angular/animations';
+import {VARIABLES} from '@shared/helpers/variables';
 
-const easing = '.6s cubic-bezier(1, .26, 0, 1)';
+const easing = VARIABLES.EASING_3;
 
-export const routeAnimations =
+export const routeAnimation =
 
-  trigger('routeAnimations', [
+  trigger('routeAnimation', [
 
     transition( '* => *', [
 
-      // GROUP - базовое состояние
+      // GROUP - base state
       group([
 
         query(':enter', [

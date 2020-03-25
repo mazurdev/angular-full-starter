@@ -1,6 +1,6 @@
 <div class="page-home">
 
-  <nv-header></nv-header>
+  <fs-header></fs-header>
 
   <section class="section-1">
     <div class="wrap offset-middle">
@@ -23,8 +23,8 @@
 
       </ng-container>
 
-      <button *ngIf="dataUse" (click)="openDialog()" class="__btn-primary" [@showing]>Open dialog</button>
-      <button *ngIf="!dataUse" (click)="callApi()" class="__btn-primary">Call Data</button>
+      <button *ngIf="dataUse" (click)="openDialog()" class="__btn_primary" [@showing]>Open dialog</button>
+      <button *ngIf="!dataUse" (click)="callApi()" class="__btn_primary">Call Data</button>
 
     </div>
   </section>
@@ -33,6 +33,6 @@
     <h2>SecondSection</h2>
   </section>
 
-  <nv-footer></nv-footer>
+  <fs-footer></fs-footer>
 
 </div>

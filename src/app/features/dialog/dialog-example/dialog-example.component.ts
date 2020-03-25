@@ -5,7 +5,7 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 import {DialogExampleData} from '@models/home.interface';
 
 @Component({
-  selector: 'nv-dialog-example',
+  selector: 'fs-dialog-example',
   templateUrl: 'dialog-example.component.html',
 })
 export class DialogExampleComponent {

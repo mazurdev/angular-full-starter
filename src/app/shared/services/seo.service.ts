@@ -18,20 +18,20 @@ export class SeoService {
     this.setNameAttribute('title', seoConfig[page].title);
     this.setNameAttribute('description', seoConfig[page].description);
     this.setNameAttribute('keywords', seoConfig[page].keywords);
-    this.setNameAttribute('subject', seoConfig[page].subject);
+    this.setNameAttribute('subject', seoConfig[page].title);
     this.setNameAttribute('url', seoConfig[page].url);
     // ie
     this.setNameAttribute('msapplication-starturl', seoConfig[page].url);
     this.setNameAttribute('application-name', seoConfig[page].title);
     // twitter
-    this.setNameAttribute('twitter:image', seoConfig[page].image);
+    this.setNameAttribute('twitter:image', 'https://example.com/assets/config/og-image.png');
     this.setNameAttribute('twitter:title', seoConfig[page].title);
     this.setNameAttribute('twitter:description', seoConfig[page].description);
     // open graph
     this.setPropertyAttribute('og:title', seoConfig[page].title);
     this.setPropertyAttribute('og:description', seoConfig[page].description);
     this.setPropertyAttribute('og:url', seoConfig[page].url);
-    this.setPropertyAttribute('og:image', seoConfig[page].image);
+    this.setPropertyAttribute('og:image', 'https://example.com/assets/config/og-image.png');
   }
 
   private setTitle(title: string) {

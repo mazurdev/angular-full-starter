@@ -1,6 +1,6 @@
-// libs
-@import "~normalize.css/normalize.css";
-@import "~aos/dist/aos.css";
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-// main
-@import "assets/styles/main";
+@import "assets/styles/libs.css";
+@import "assets/styles/features/preloader";
+@import "assets/styles/features/classes";
+@import "assets/styles/features/material";
+@import "assets/styles/features/cookie";
+@import "assets/styles/features/addition";

@@ -2,7 +2,6 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, PLATFORM_
 // utils
 import {SeoService} from '@shared/services/seo.service';
 import {isPlatformBrowser} from '@angular/common';
-import {showing} from '@shared/utils/animations';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogExampleComponent} from '@features/dialog/dialog-example/dialog-example.component';
 // data
@@ -11,13 +10,14 @@ import {NgOnDestroy} from '@shared/services/data/ngOnDestroy.service';
 import {takeUntil} from 'rxjs/operators';
 import {HttpErrorResponse} from '@angular/common/http';
 import {HomeInterface} from '@shared/models/home.interface';
+import {animations} from '@shared/helpers/animations';
 
 @Component({
-  selector: 'nv-home',
+  selector: 'fs-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  animations: [animations],
   providers: [NgOnDestroy],
-  animations: [showing],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
@@ -63,7 +63,7 @@ export class HomeComponent {
       .subscribe(data => {
         this.dataHome$ = data;
         this.cdr.detectChanges();
-        console.log(this.dataHome$);
+        // console.log(this.dataHome$);
       }, (e: HttpErrorResponse) => console.log(e));
   }
 

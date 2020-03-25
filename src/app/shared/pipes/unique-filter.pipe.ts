@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {extractDeepPropertyByMapKey, isObject, isUndefined} from '@shared/pipes/helpers-pipe';
+import {extractDeepPropertyByMapKey, isObject, isUndefined} from '@shared/helpers/pipes-helpers';
 
 @Pipe({name: 'unique'})
 export class UniqueFilterPipe implements PipeTransform {

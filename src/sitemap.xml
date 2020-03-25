@@ -5,14 +5,16 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
->
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
   <url>
     <loc>https://example.com</loc>
     <lastmod>2019-06-07T18:33:09+00:00</lastmod>
-    <image:image>
-      <image:loc>https://example.com/assets/img/example.png</image:loc>
-    </image:image>
+  </url>
+
+  <url>
+    <loc>https://example.com/lazy/nested</loc>
+    <lastmod>2019-06-07T18:33:09+00:00</lastmod>
   </url>
 
 </urlset>

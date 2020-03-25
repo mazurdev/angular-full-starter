@@ -7,15 +7,19 @@ import {DeviceDetectorModule} from 'ngx-device-detector';
 import {NgxJsonLdModule} from '@ngx-lite/json-ld';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 // pipes
-import {ValuesPipe} from '@shared/pipes/values.pipe';
 import {UniqueFilterPipe} from '@shared/pipes/unique-filter.pipe';
 // material
 import {MatDialogModule, MatProgressSpinnerModule, MatSnackBarModule} from '@angular/material';
+import {SafePipe} from '@shared/pipes/safe.pipe';
+import {OrderByPipe} from '@shared/pipes/order-by.pipe';
+import {FilterByPipe} from '@shared/pipes/filter-by.pipe';
 
 @NgModule({
   declarations: [
     // pipes
-    ValuesPipe,
+    SafePipe,
+    OrderByPipe,
+    FilterByPipe,
     UniqueFilterPipe
   ],
   imports: [
@@ -39,7 +43,9 @@ import {MatDialogModule, MatProgressSpinnerModule, MatSnackBarModule} from '@ang
     NgxJsonLdModule,
     FontAwesomeModule,
     // pipes
-    ValuesPipe,
+    SafePipe,
+    OrderByPipe,
+    FilterByPipe,
     UniqueFilterPipe,
     // material
     MatDialogModule,

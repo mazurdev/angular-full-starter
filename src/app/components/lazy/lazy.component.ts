@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'nv-lazy',
+  selector: 'fs-lazy',
   templateUrl: './lazy.component.html',
   styleUrls: ['./lazy.component.scss']
 })

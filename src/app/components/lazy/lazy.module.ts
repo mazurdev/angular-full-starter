@@ -16,8 +16,7 @@ import {NestedComponent} from './nested/nested.component';
     CommonModule,
     RouterModule,
     LazyRoutingModule
-  ],
-  providers: []
+  ]
 })
 export class LazyModule {
 }

@@ -6,7 +6,7 @@ import {ICONS} from '@shared/helpers/icons';
 import {VARIABLES} from '@shared/helpers/variables';
 
 @Component({
-  selector: 'nv-ios-pwa',
+  selector: 'fs-ios-pwa',
   templateUrl: './ios-pwa.component.html',
   styleUrls: ['./ios-pwa.component.scss']
 })

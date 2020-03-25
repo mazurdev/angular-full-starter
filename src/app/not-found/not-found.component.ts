@@ -2,16 +2,16 @@
 import {Component, OnInit} from '@angular/core';
 // utils
 import {NotFoundService} from '@shared/services/not-found.service';
-import {VARIABLES} from '@shared/helpers/variables';
+import {ROUTES} from '@shared/helpers/routes';
 
 @Component({
-  selector: 'nv-not-found',
+  selector: 'fs-not-found',
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent implements OnInit {
 
-  HOME = VARIABLES.HOME;
+  HOME = ROUTES.HOME;
   public status: { code: number; message: string };
 
   constructor(
