@@ -64,7 +64,7 @@
     "classlist.js": "^1.1.20150312",
     "core-js": "^3.6.4",
     "domino": "^2.1.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "modern-normalize": "^0.6.0",
     "ngx-device-detector": "^1.4.1",
     "rfs": "^9.0.2",
